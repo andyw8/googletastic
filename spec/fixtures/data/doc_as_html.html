@@ -1,0 +1,3097 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base target="_top">
+<style type="text/css">
+  
+
+/* default css */
+
+table {
+  font-size: 1em;
+  line-height: inherit;
+  border-collapse: collapse;
+}
+
+
+tr {
+  
+  text-align: left;
+  
+}
+
+
+div, address, ol, ul, li, option, select {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+p {
+  margin: 0px;
+}
+
+
+pre {
+  font-family: Courier New;
+  white-space: pre-wrap;
+  margin:0;
+}
+
+body {
+  margin: 6px;
+  padding: 0px;
+  font-family: Verdana, sans-serif;
+  font-size: 10pt;
+  background-color: #ffffff;
+}
+
+
+img {
+  -moz-force-broken-image-icon: 1;
+}
+
+@media screen {
+  html.pageview {
+    background-color: #f3f3f3 !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  
+
+  body {
+    min-height: 1100px;
+    
+    counter-reset: __goog_page__;
+  }
+  * html body {
+    height: 1100px;
+  }
+  .pageview body {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 2px solid #bbb;
+    border-bottom: 2px solid #bbb;
+    width: 648px !important;
+    margin: 15px auto 25px;
+    padding: 40px 50px;
+  }
+  /* IE6 */
+  * html {
+    overflow-y: scroll;
+  }
+  * html.pageview body {
+    overflow-x: auto;
+  }
+  /* Prevent repaint errors when scrolling in Safari. This "Star-7" css hack
+     targets Safari 3.1, but not WebKit nightlies and presumably Safari 4.
+     That's OK because this bug is fixed in WebKit nightlies/Safari 4 :-). */
+  html*#wys_frame::before {
+    content: '\A0';
+    position: fixed;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  
+
+  
+    .writely-callout-data {
+      display: none;
+      *display: inline-block;
+      *width: 0;
+      *height: 0;
+      *overflow: hidden;
+    }
+    .writely-footnote-marker {
+      background-image: url('MISSING');
+      background-color: transparent;
+      background-repeat: no-repeat;
+      width: 7px;
+      overflow: hidden;
+      height: 16px;
+      vertical-align: top;
+
+      
+      -moz-user-select: none;
+    }
+    .editor .writely-footnote-marker {
+      cursor: move;
+    }
+    .writely-footnote-marker-highlight {
+      background-position: -15px 0;
+      -moz-user-select: text;
+    }
+    .writely-footnote-hide-selection ::-moz-selection, .writely-footnote-hide-selection::-moz-selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection ::selection, .writely-footnote-hide-selection::selection {
+      background: transparent;
+    }
+    .writely-footnote-hide-selection {
+      cursor: move;
+    }
+
+    
+    .editor .writely-comment-yellow {
+      background-color: #FF9;
+      background-position: -240px 0;
+    }
+    .editor .writely-comment-yellow-hover {
+      background-color: #FF0;
+      background-position: -224px 0;
+    }
+    .editor .writely-comment-blue {
+      background-color: #C0D3FF;
+      background-position: -16px 0;
+    }
+    .editor .writely-comment-blue-hover {
+      background-color: #6292FE;
+      background-position: 0 0;
+    }
+    .editor .writely-comment-orange {
+      background-color: #FFDEAD;
+      background-position: -80px 0;
+    }
+    .editor .writely-comment-orange-hover {
+      background-color: #F90;
+      background-position: -64px 0;
+    }
+    .editor .writely-comment-green {
+      background-color: #99FBB3;
+      background-position: -48px 0;
+    }
+    .editor .writely-comment-green-hover {
+      background-color: #00F442;
+      background-position: -32px 0;
+    }
+    .editor .writely-comment-cyan {
+      background-color: #CFF;
+      background-position: -208px 0;
+    }
+    .editor .writely-comment-cyan-hover {
+      background-color: #0FF;
+      background-position: -192px 0;
+    }
+    .editor .writely-comment-purple {
+      background-color: #EBCCFF;
+      background-position: -144px 0;
+    }
+    .editor .writely-comment-purple-hover {
+      background-color: #90F;
+      background-position: -128px 0;
+    }
+    .editor .writely-comment-magenta {
+      background-color: #FCF;
+      background-position: -112px 0;
+    }
+    .editor .writely-comment-magenta-hover {
+      background-color: #F0F;
+      background-position: -96px 0;
+    }
+    .editor .writely-comment-red {
+      background-color: #FFCACA;
+      background-position: -176px 0;
+    }
+    .editor .writely-comment-red-hover {
+      background-color: #FF7A7A;
+      background-position: -160px 0;
+    }
+
+    .editor .writely-comment-marker {
+      background-image: url('MISSING');
+      background-color: transparent;
+      padding-right: 11px;
+      background-repeat: no-repeat;
+      width: 16px;
+      height: 16px;
+      -moz-user-select: none;
+    }
+
+    .editor .writely-comment-hidden {
+      padding: 0;
+      background: none;
+    }
+    .editor .writely-comment-marker-hidden {
+      background: none;
+      padding: 0;
+      width: 0;
+    }
+    .editor .writely-comment-none {
+      opacity: .2;
+      filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+      -moz-opacity: .2;
+    }
+    .editor .writely-comment-none-hover {
+      opacity: .2;
+      filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+      -moz-opacity: .2;
+    }
+  
+
+
+  
+  .br_fix span+br:not(:-moz-last-node) {
+    
+    position:relative;
+    
+    left: -1ex
+    
+  }
+
+  
+  #cb-p-tgt {
+    font-size: 8pt;
+    padding: .4em;
+    background-color: #ddd;
+    color: #333;
+  }
+  #cb-p-tgt-can {
+    text-decoration: underline;
+    color: #36c;
+    font-weight: bold;
+    margin-left: 2em;
+  }
+  #cb-p-tgt .spin {
+    width: 16px;
+    height: 16px;
+    background: url(//ssl.gstatic.com/docs/clipboard/spin_16o.gif) no-repeat;
+  }
+}
+
+h6 { font-size: 8pt }
+h5 { font-size: 8pt }
+h4 { font-size: 10pt }
+h3 { font-size: 12pt }
+h2 { font-size: 14pt }
+h1 { font-size: 18pt }
+
+blockquote {padding: 10px; border: 1px #DDD dashed }
+
+.webkit-indent-blockquote { border: none; }
+
+a img {border: 0}
+
+.pb {
+  border-width: 0;
+  page-break-after: always;
+  /* We don't want this to be resizeable, so enforce a width and height
+     using !important */
+  height: 1px !important;
+  width: 100% !important;
+}
+
+.editor .pb {
+  border-top: 1px dashed #C0C0C0;
+  border-bottom: 1px dashed #C0C0C0;
+}
+
+div.google_header, div.google_footer {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+
+/* Table of contents */
+.editor div.writely-toc {
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+}
+.writely-toc > ol {
+  padding-left: 3em;
+  font-weight: bold;
+}
+ol.writely-toc-subheading {
+  padding-left: 1em;
+  font-weight: normal;
+}
+/* IE6 only */
+* html writely-toc ol {
+  list-style-position: inside;
+}
+.writely-toc-none {
+  list-style-type: none;
+}
+.writely-toc-decimal {
+  list-style-type: decimal;
+}
+.writely-toc-upper-alpha {
+  list-style-type: upper-alpha;
+}
+.writely-toc-lower-alpha {
+  list-style-type: lower-alpha;
+}
+.writely-toc-upper-roman {
+  list-style-type: upper-roman;
+}
+.writely-toc-lower-roman {
+  list-style-type: lower-roman;
+}
+.writely-toc-disc {
+  list-style-type: disc;
+}
+
+/* Ordered lists converted to numbered lists can preserve ordered types, and
+   vice versa. This is confusing, so disallow it */
+ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
+  list-style-type: disc;
+}
+
+ol[type="disc"], ol[type="circle"], ol[type="square"] {
+  list-style-type: decimal;
+}
+
+/* end default css */
+
+
+  /* default print css */
+  
+  @media print {
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    div.google_header, div.google_footer {
+      display: block;
+      min-height: 0;
+      border: none;
+    }
+
+    div.google_header {
+      flow: static(header);
+    }
+
+    /* used to insert page numbers */
+    div.google_header::before, div.google_footer::before {
+      position: absolute;
+      top: 0;
+    }
+
+    div.google_footer {
+      flow: static(footer);
+    }
+
+    /* always consider this element at the start of the doc */
+    div#google_footer {
+      flow: static(footer, start);
+    }
+
+    span.google_pagenumber {
+      content: counter(page);
+    }
+
+    span.google_pagecount {
+      content: counter(pages);
+    }
+
+    .endnotes {
+      page: endnote;
+    }
+
+    /* MLA specifies that endnotes title should be 1" margin from the top of the page. */
+    @page endnote {
+      margin-top: 1in;
+    }
+
+    callout.google_footnote {
+      
+      display: prince-footnote;
+      footnote-style-position: inside;
+      /* These styles keep the footnote from taking on the style of the text
+         surrounding the footnote marker. They can be overridden in the
+         document CSS. */
+      color: #000;
+      font-family: Times New Roman;
+      font-size: 12.0pt;
+      font-weight: normal;
+    }
+
+    /* Table of contents */
+    #WritelyTableOfContents a::after {
+      content: leader('.') target-counter(attr(href), page);
+    }
+
+    #WritelyTableOfContents a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  @page {
+    @top {
+      content: flow(header);
+    }
+    @bottom {
+      content: flow(footer);
+    }
+    @footnotes {
+      border-top: solid black thin;
+      padding-top: 8pt;
+    }
+  }
+  /* end default print css */
+
+
+/* custom css */
+
+
+/* end custom css */
+
+/* ui edited css */
+
+body {
+  font-family: Times New Roman;
+  
+  font-size: 12.0pt;
+  line-height: normal;
+  background-color: #ffffff;
+}
+/* end ui edited css */
+
+
+/* editor CSS */
+.editor a:visited {color: #551A8B}
+.editor table.zeroBorder {border: 1px dotted gray}
+.editor table.zeroBorder td {border: 1px dotted gray}
+.editor table.zeroBorder th {border: 1px dotted gray}
+
+
+.editor div.google_header, .editor div.google_footer {
+  border: 2px #DDDDDD dashed;
+  position: static;
+  width: 100%;
+  min-height: 2em;
+}
+
+.editor .misspell {background-color: yellow}
+
+.editor .writely-comment {
+  font-size: 9pt;
+  line-height: 1.4;
+  padding: 1px;
+  border: 1px dashed #C0C0C0
+}
+
+
+/* end editor CSS */
+
+</style>
+<script>
+    function DoPageLoad() {
+      
+      window.TimeoutId = setTimeout('');
+      parent.TIME_doc_load_full = new Date().getTime();
+    }
+  </script>
+</head>
+<body onload="DoPageLoad();">
+    
+      
+      <!--[if IE]>
+        <?XML:NAMESPACE PREFIX = GDOC />
+      <![endif]-->
+    
+    
+    
+<div class="Section1">
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:right">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Management, Vol. 8, 2003, 2, pp. 49-75</font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:right">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="2">            A. Pucihar, M. Podlogar: Organizational factors for successful entering to e-marketplace...</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">ORGANIZATIONAL FACTORS FOR SUCCESSFUL </font></b></span><span style="FONT-FAMILY:'Times New Roman'"><b><font size="3"><br></font></b></span><span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">ENTERING TO E-MARKETPLACE: CASE OF LARGE ORGANIZATIONS IN SLOVENIA</font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3"> </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Andreja Pucihar</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><sup><font size="1">*</font></sup></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">, Mateja Podlogar</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><sup><font size="1">**</font></sup></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Received: 10. 09. 2003</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">              </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Preliminary communication</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Accepted: 18. 11. 2003</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">              </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">UDC: 004.738.5 : 658.8</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:21.25pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">The appeal of doing business on the Web is clear. By bringing together large numbers of buyers and sellers and by automating transactions, e-marketplaces expand the choices available to buyers, give sellers access to new customers (buyers), and reduce transaction costs for all participants. Entering the e-marketplace is related to the business process of reengineering, connecting of information systems, gaining new knowledge with training and learning, and making investments in new information technologies and software. Such organization must take very careful steps to prepare itself for a successful entrance on the e-marketplace. Only this kind of approach will enable the organization the full use of the available opportunities and will bring expected business results. T</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">he paper presents the different types of e-marketplaces and the use of e-marketplaces for business. Furthermore, the results of the research that was done among 250 large organizations in Slovenia are presented. The current status of the use e-commerce and e-marketplaces in large organizations in Slovenia is introduced. In addition, organizational factors found by large organizations to be important for a successful entrance to the e-marketplaces are presented. We conclude the paper with recommendations for the organizations that intend to enter e-marketplace.</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="2"> </font></span>
+  </p>
+  <h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">1. INTRODUCTION</font></b></span>
+  </h1>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The use of the Internet and Electronic Commerce in the late ’90s caused the disappearance of intermediaries between the buyer and seller. A seller could sell his products and services directly to a buyer without an intermediary in between (Shaffer and Zettlemeyer 1999; Wigand and Benjamin 1995; Choi and others 1997). With the advance in the development of Electronic Commerce technologies, new types of intermediaries were established. These new intermediaries were offering new value added services. New intermediaries attract a lot of new buyers and sellers with new services that support the trading process between them (</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Clarke 2001, 596; Chircu and Kauffman 2000, 7; </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">DeSisto 2000, 4;</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Chircu and Kauffman 1999; 109; The Economist 1999, Barling and Stark 1998; Zwas 1998</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">). This new way of doing business describes the e-marketplace, which represents one of the new business models developed in the late ’90s. The e-marketplace is the result of using innovative technology in business processes. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Doing business on the e-marketplace enables sellers to enter new markets, to find new buyers, and to increase sales. On the other side, the e-marketplace gives a buyer access to a broader range of products and services offered by sellers. A buyer has the option to quickly compare various offers by price and performance measures. The e-marketplace services support the exchange of large amounts of data about the supply and demand between the buyer and seller, and the implementation of business transactions (DeSisto 2000, 4, Lenz 2000, 2). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">There are many different business models of e-marketplaces. In practice, we can find a lot of evidence that the e-marketplace is supporting many different processes between a buyer and a seller. Some e-marketplaces support only the aggregation of supply and demand, and the searching and matching of buyers or sellers. In addition, many e-marketplaces support different types of auctions and negotiations. On the other hand, not many e-marketplaces support the entire trading process where business services such as contracting, finances, logistics, insurance, legal, payments and other services are needed (Pucihar 2003, 140).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">2. DEFINITION OF E-MARKETPLACE</font></b></span>
+  </h1>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The e-marketplace is a virtual marketplace where buyers and suppliers meet to exchange information about product and service offers, and to negotiate and carry out business transactions (Archer and Gebauer 2000). Furthermore, in the age of the Internet and with the emergence of new information and communication technologies, the e-marketplace is a Web-based information system, where multiple suppliers and multiple buyers can undertake business transactions via the Internet (Russ 2001, 2). The e-marketplace uses Internet technologies and standards to distribute product data and to facilitate online transactions (Segev and others 1999, 138). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">An intermediary can provide four important mechanisms that cause marketplaces to add value (Christiaanse and others 2001, 424; Bailey and Bakos 1997): </font></span>
+  </p>
+  <ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Matching buyers and sellers to negotiate prices on a dynamic and real-time basis,</font></i></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Ensuring trust among participants by maintaining a neutral position,</font></i></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Facilitating market operations by supporting certain transaction phases, and</font></i></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Aggregating together a large number of buyers and sellers.</font></i></span>
+    </li>
+  </ul>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Intermediary functions may support a multiplicity of activities, including brokerage – auctions payments, logistics, legal, consulting, or may support inter-company communications through third party inter-organizational systems and related systems (Bakos 1991, 296, Choudhury and others 1998, 472, Segev and others 1999, 138, Archer and Gebauer 2000, Kaplan and Sawhney 2000; Grewal and others 2001, Russ 2001, 2).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The success of the e-marketplace depends on the perceived net benefit of buyers and suppliers. From the viewpoint of transaction cost economics, information technology helps to reduce transaction costs, risks, and coordinating costs of e-marketplaces (Clemons and others 1993). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">In order to understand strategic implications of the e-marketplace, we must focus on the following characteristics (Bakos 1991, 297):</font></span>
+  </p>
+  <ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">An e-marketplace system can reduce customers’ costs for obtaining information about the prices and product offers of alternative suppliers as well as suppliers’ costs for communicating information about their prices and product characteristics to additional customers. </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The benefits by individual participants in an e-marketplace increase as more organizations join the system. </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The e-marketplace can impose significant switching costs on its participants. </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The e-marketplace typically requires large capital investments and offers substantial economies of scale and scope. </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Potential participants on the e-marketplace face substantial uncertainty with regard to the actual benefits of joining such a system. Occasionally, this uncertainty remains even after an organization joins the system. </font></span>
+    </li>
+  </ul>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">There are many different types of e-marketplaces operating today.  We may divide e-marketplaces into those controlled by sellers, those controlled by buyers and those controlled by neutral third parties (Berryman and others, 1998):</font></span>
+  </p>
+  <ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">The e-marketplaces controlled by sellers are usually set up by a single vendor seeking many buyers. Its aim is to create or retain value and market power in any transaction. </font></i></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">The e-marketplaces controlled by buyers are set up by or for one or more buyers with the aim of shifting power and value on the marketplace to the buyer’s side. Many involve an intermediary, but some particularly strong buyers have developed marketplaces for themselves. </font></i></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Neutral e-marketplaces are set up by third-party intermediaries to match many buyers to many sellers. </font></i></span>
+    </li>
+  </ul>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">We may divide e-marketplaces into horizontal and vertical marketplaces. A horizontal marketplace addresses a specific function (e.g. human resources, office supplies) and serves a wide range of industries, while a vertical marketplace focuses on a wide range of functions in a specific industry, such as chemicals, steel or automotive (Baldi and Borgman 2001, 630, Ramsdell 2000). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">We may also classify marketplaces into four categories (Kaplan and Sawhney, 2000):</font></span>
+  </p>
+  <ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">MRO (Maintenance Raw and Operations) hubs are horizontal markets that enable systematic sourcing of operating inputs,</font></i></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Yield managers are horizontal markets that enable spot sourcing of operating inputs,</font></i></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Exchanges are vertical markets that enable spot sourcing of manufacturing inputs,</font></i></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Catalog hubs are vertical markets that enable systematic sourcing of manufacturing inputs.</font></i></span>
+    </li>
+  </ul>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">As previously mentioned, an intermediary provides different services to buyers and suppliers on the e-marketplace. The most commonly used services on today’s marketplaces are related to maintaining a product e-catalogue, negotiating support and performing on-line auctions (Lefebvre and others 2001). The aim of intermediaries, i. e. e-marketplace service providers, is to provide a wide range of services to all the participants on the e-marketplace. Among others, these services include product development, logistics and insurance services, payments and similar. There are not many marketplaces operating today that offer such a wide range of services. Most of them are oriented in providing services of matching buyers and sellers, negotiation and auction services (Dai and Kauffman 2001).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">3. PROBLEM DEFINITION</font></b></span>
+  </h1>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The appeal of doing business on the Web is clear. By bringing together large numbers of buyers and sellers and by automating transactions, e-marketplaces expand the choices available to buyers, give sellers access to new customers (buyers), and reduce transaction costs for all participants. By extracting fees for the transactions occurring within the business-to-business (B2B) marketplaces, market makers (intermediaries) can earn vast revenues. Hence, since the marketplaces are made from software – not bricks and mortar – they can gain scale with minimal additional investment, promising even more attractive margins as the markets grow (Haag and others 2002, 212; Kaplan and Sawhney, 98, 2000). An organization will enter an e-marketplace only if it will see enough benefits that might be gained with value added services on the e-marketplace. That is why it is important that intermediaries know the buyers’ and suppliers’ needs very well. This will enable them to provide value-added services and provide the necessary critical mass of organizations to the marketplaces (Pucihar 2002). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Entering the e-marketplace is related to the business process of reengineering, connecting of information systems, gaining new knowledge with training and learning, and making investments in new technologies and software (Bakos 1991, 297; Archer and Gebauer 2000). One of the main requirements for successfully doing business on the e-marketplace is the use of e-commerce in daily business. An organization may enter the e-marketplace as a buyer or a seller (supplier). An organization must take very careful steps to prepare itself for a successful entrance on the e-marketplace. Only this kind of approach will enable the organization to a full use of the available opportunities and will bring expected business results (Archer and Gebauer 2000). For that reason, it is important to research the factors that organizations need to consider to successfully enter the e-marketplace.</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Based on literature review, we can find many advantages and opportunities coming from the field of e-commerce and e-marketplaces (Podlogar 2003, 127; Pucihar 2003, 140). In a real business world, we can find many cases of successful as well as many cases of unsuccessful use of the e-marketplace, on both the buyers’ and sellers’ side. Unsuccessful use of the e-marketplace might be caused by improper services of e-marketplace providers. If services of e-marketplace providers do not add any value to the buyer or seller, then in the long term, they will not choose the e-marketplace as a way of doing business. Thus, the e-marketplace will be forced to close its business since it will not attract a sufficient critical mass of companies. Without a sufficient number of sellers, buyers cannot choose among different sellers. The same rule also applies to buyers - if there are not enough buyers on the e-marketplace, then sellers do not have sufficient interest to join the e-marketplace since they will not have parties to whom they could sell their products or services.</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The direction in which the e-marketplace will evolve is still quite uncertain because of the quickly changing environment and fast development of e-commerce technologies. In the long term, only the e-marketplace that will offer the most value-added services will survive in the turbulent global economic environment. As e-commerce connects markets to one global market, organizations will have to be able to compete on the global market. They will try to gain the competitive advantage in different ways, which includes doing business on the e-marketplace. For that reason, it is important to investigate how organizations need to be organized to successfully enter the e-marketplace. By knowing these factors, organizations will be able to better prepare to enter e-marketplaces successfully and to be able to compete in the global marketplace (Pucihar 2002). Doing business on the e-marketplace in Slovenia is not yet very widespread; however, there are some indices from various organizations showing their interest in entering the e-marketplace. Since Slovenia is in the process of joining the European Union, this research is especially important for organizations in Slovenia, who will soon have the opportunity to operate and compete on the common European and global market (Pucihar 2002). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">4. PRIOR RESEARCH</font></b></span>
+  </h1>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Various authors investigated and found the following organizational factors to be important for a successful entry on the e-marketplace: proper organization of information systems department and level of use of information technology in the organizations, awareness of benefits of eMarkeplace use, level of top management support in the process of an organization's entrance onto the e-marketplace, formulated electronic commerce strategy as a stimulation for entering the e-marketplace, training for the use of e-marketplace interface and programs, awareness of and possibility to make extra investments needed for entering the e-marketplace, ability to set-up and maintain an electronic catalogue of products and services, ability to assure the standardized form of data and the readiness of business processes for an inter-organizational relationship. </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">The important organizational factors, found in prior research, are described in Table 1. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Table 1. Organizational factors found in prior research</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="zeroBorder" style=" MARGIN-LEFT:0pt; WIDTH:351pt" width="468">
+<tr style="HEIGHT:20.05pt">
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="132">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Factor</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="108">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Author</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Facts</font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style=" VERTICAL-ALIGN:top" width="132">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Organization of the IS departments and the level of use of information technology </font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="108">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Auer and Reponen 1997</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Bharadwaj 2000</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Grewal and others 2001</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">The use of information technology and proper organization of information systems department in an organization are important for the achievement of competitive advantage in the e-marketplace and they enhance the possibility for more successful business on the e-marketplace. </font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style=" VERTICAL-ALIGN:top" width="132">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Awareness of benefits of eMarkeplace use</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="108">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Porter and Millar, 1985</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Malone and others 1987</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Bakos 1991</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Steinfield and Caby 1993</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Steinfield and others 1993</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Streeter and others 1996</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Main benefits of e-marketplace use are lower transaction costs for all participants. This leads to a more effective business. Doing business on the e-marketplace enables a company to simplify business processes, and to facilitate a faster search of new buyers and suppliers, and faster entrance to new markets.</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style=" VERTICAL-ALIGN:top" width="132">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">The level of top management support in the process of an organization’s entering the e-marketplace</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="108">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Turban 2002, 690 </font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Ramsdell 2000, 181</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Top management support is most important for the successful implementation of electronic commerce projects. It is important that top management gives initiative for entering the e-marketplace and assigns a responsible person for work on this project. It is also important that the top management tracks and encourages the work on the project.</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style=" VERTICAL-ALIGN:top" width="132">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Formulated electronic commerce strategy in an organization</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="108">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Turban 2002, 676</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Formulated electronic commerce strategy in an organization is very important, as electronic commerce is a strategic issue of today's business in the competitive market. Electronic commerce is, for most organizations, of critical importance. It enables them to compete in global competitive markets and, furthermore, enables their survival.</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style=" VERTICAL-ALIGN:top" width="132">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Training for the use of e-marketplace interface and programs</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="108">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Grewal and others 2001</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">While entering the e-marketplace, organizations also face new programs and interfaces that enable doing business on the e-marketplace. For successful use of programs and interfaces of the e-marketplace, it is important to provide training and education for users. </font></span>
+        </p>
+      </td>
+    </tr>
+</table>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"><br clear="all"></font></span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="zeroBorder" style=" MARGIN-LEFT:0pt; WIDTH:351pt" width="468">
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="96">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Factor</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="144">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Author</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Facts</font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style=" VERTICAL-ALIGN:top" width="96">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Awareness of and possibility to make extra investments needed for entering the e-marketplace</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="144">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Bakos 1991</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Archer and Gebauer 2000</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">While entering the e-marketplace, organizations may face extra costs, such as new technology and programs needed to connect to the e-marketplace, necessary training and education providing for users, and necessary business process re-engineering. Organizations should be aware of possible extra costs and have to have the possibility to make the necessary extra investments.</font></span>
+        </p>
+      </td>
+    </tr>
+<tr style="HEIGHT:88.9pt">
+<td style=" VERTICAL-ALIGN:top" width="96">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Ability to set-up and maintain the electronic catalogue of products and services</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="144">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Choudhury and others 1998</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Enterworks 2000</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Mello 2001</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">If an organization does not have an electronic catalogue of its products and services, it may be a limitation for entering the e-marketplace. Design and maintenance of an electronic catalogue of products and services require investments, time and knowledge. The issue is much more complex if the seller has a wide range of products or services with different characteristics, which need to be described in a catalogue. </font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style=" VERTICAL-ALIGN:top" width="96">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Ability to ensure and provide the standardized form of data</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="144">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Dai and Kauffman 2001</font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Esichaikul and Chavananon 2001 </font></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Buescher and Vittet-Philippe 2000</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Organizations need to assure and provide the data in a standardized form. Only this will enable them to do business with other organizations electronically. Use of standards for electronic commerce is very important because it enables organizations to exchange business documents. Formulation of standards and use of standards are also found important by the European Commission.</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style=" VERTICAL-ALIGN:top" width="96">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Readiness of business processes for inter-organizational relationship</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="144">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Esichaikul and Chavananon 2001</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:top" width="228">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Organizations need to organize business processes in a way that will enable them to connect with other organizations. It is important that organizations are flexible and know how to take advantage of new business models that are the results of electronic commerce.</font></span>
+        </p>
+      </td>
+    </tr>
+</table>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">In the next chapters, we describe the data on:</font></span>
+  </p>
+  <ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Use of e-marketplaces in large organizations in Slovenia, including:</font></i></span>
+    </li>
+  </ul>
+<ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Experiences with doing business in e-marketplaces,</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Intention of organizations about entering e-marketplaces in the future,</font></span>
+    </li>
+  </ul>
+<ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Importance of organizational factors for the successful entering of the e-marketplace, including:</font></i></span>
+    </li>
+  </ul>
+<ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Organization of the IS departments and level of use of IT,</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Awareness of benefits of e-marketplace use,</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Level of top management support for an organization’s entering the  e-marketplace,</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Ability to set-up and maintain an electronic catalogue of products and/or services,</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Costs of preparing and entering the e-marketplace,</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Ability to ensure and provide the standardized form of data,</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Readiness of an organization for an inter-organizational relationship.</font></span>
+    </li>
+  </ul>
+<h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3"> </font></b></span>
+  </h1>
+  <h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">5. RESEARCH METHODOLOGY </font></b></span>
+  </h1>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The research was performed in 250 large organizations with the highest revenues and a Web page in Slovenia in May, 2002. To be qualified as a large organization, an organization has to fulfill at least two of the following conditions based on the 51</font></span><span style="FONT-FAMILY:'Times New Roman'"><sup><font size="1">st</font></sup></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> article of the Organizations’ Act:</font></span>
+  </p>
+  <ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">More than 250 employees,</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Annual revenue of more than 4 billion Slovene tolars (SIT), and</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Average asset value of more than 2 billion Slovene tolars (SIT).</font></span>
+    </li>
+  </ul>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The main reason for making such a choice lies in the assumption that entering the e-marketplace is associated with extra expenses and extra investments in new knowledge, business processes reengineering and new technologies, and it is expected that large organizations have more resources available for such a purpose. The research was based on a questionnaire. The questionnaire was designed on the basis of theoretical knowledge, prior research and case studies. Opinions of experienced experts and information technology and Internet service providers in this field were also considered. The questionnaire was divided into the following sections:</font></span>
+  </p>
+  <ul type="disc">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Respondents and organizations data,</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Experiences with the use of e-marketplaces, and</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Factors for the successful entering of the e-marketplace.</font></span>
+    </li>
+  </ul>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">In order to ensure that the responses reflect the situation in each organization, the letters with the questionnaires were addressed to the chief executive officers. They were asked to distribute the questionnaires to the chief procurement officer, chief sales officer and chief information officer. A total of 119 useful responses were obtained and analyzed.</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">6. RESEARCH RESULTS</font></b></span>
+  </h1>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Most of the respondents are IT personnel (42%), 24.4% of the respondents work in the field of procurement and 17.7% of them work in sales. Most of the respondents are very experienced. Almost half of them have more than 10 years of experience in their field of work (46.2%). Almost a third of the respondents have 5 to 10 years of experience in their field of work (31.9%). Most of the organizations sell their products and services in Slovenia (45.4%) and other European countries (33.6%). The same situation is about procurement. Most of the organizations buy products and services in Slovenia (45.6%) and other European countries (37.4%). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">6.1. Electronic commerce experiences in large organizations in </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:42pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">Slovenia</font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Electronic commerce experiences were measured by defined electronic commerce strategy, defined position of the electronic commerce director/manager and by use of the enterprise resource planning (ERP) system in an organization, use of electronic commerce standards for documents exchange, and the availability of an electronic catalogue of products and/or services. Almost a quarter of the respondents stated that they have formulated an electronic commerce strategy (24.4%) in their organization. Another quarter of the respondents stated that they intend to define electronic commerce strategy until the end of 2003 (24.4%). More than a quarter of the respondents stated that they do not have a formulated electronic commerce strategy or they do not have an opinion about it (27.7%). Another 2.5% of the respondents did not answer the question (Figure 1).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <img alt="" border="0" height="263" src="dcv74wnb_7g3frcqpp_b.png" width="405"></p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Figure 1. Formulated e-commerce strategy in organizations</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Almost a third of the respondents confirmed that they have defined the position of an electronic commerce director or manager in their organization (31.1%). A total of 10.1% of the respondents confirmed that in their organization, they plan to define the position of an electronic commerce director or manager in the next years. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Another 5% of the respondents confirmed that in their organization, they would define the electronic commerce director or manager by the end of the year 2003. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">More than half of the respondents expressed that in their organization, they do not have a defined position of an electronic commerce director or manager (50.4%). About 3.4% of the respondents did not answer the question (Figure 2).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <img alt="" border="0" height="253" src="dcv74wnb_8gmc7qpch_b.png" width="505"></p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Figure 2. Defined position of e-commerce manager in organizations</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2"> </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Most of the respondents confirmed that in their organization, they use an ERP system (79.0%). Another 10.9% intend to use an ERP system in the next years (6.7%) and by the end of 2003 (4.2%). Only 6.7% of the respondents stated that in their organization, they do not have an ERP system. Another 3.4% of the respondents did not respond to this question (1.7%) nor have an opinion (1.7%) (Figure 3). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <img alt="" border="0" height="235" src="dcv74wnb_9dzp48rcx_b.png" width="468"></p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2"> </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Figure 3. Defined position of e-commerce manager in organizations</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The majority of respondents who have already applied an ERP system stated that their ERP system was developed in their organizations on their own (52%). From the ERP systems of IT providers on the market, SAP R/3 is the solution most used in organizations in Slovenia (21.3), followed by Kopa (Slovene provider) (9.6%), MS Navison (9.6%) and Baan (7.5%) (Figure 4). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <img alt="" border="0" height="193" src="dcv74wnb_10gqf4qkch_b.png" width="302"></p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2"> </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Figure 4. Type of ERP system used in organizations</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2"> </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The use of electronic commerce standards is important because it enables the exchange of data among business partners despite the different information systems that are used in organizations. The exchange of business documents with business partners in standardized form is most frequently used for “purchase orders” (19.3%) and “payments orders” (17.6%). Only 10% of organizations, or even less, exchange other documents in standardized form. Other documents, like the “request for quotation and/or offer”, “offer”, and “product and/or service catalogue”, are exchanged by most organizations (68.9%) in non- standardized form (Figure 5). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <img alt="" border="0" height="344" src="dcv74wnb_11gqwzwtdj_b.png" width="456"></p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Figure 5. Use of e-commerce standards in document exchange</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Availability of an electronic catalogue of products and services is an important factor for entering the global market. Most of the respondents confirmed that buyers can gain an electronic catalogue of products and/or services on an organization’s web site (60.4%). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Almost half of the respondents confirmed that an electronic catalogue could be also acquired by e-mail (49.6%) and by CD media (43.5%). A quarter of the respondents stated that an electronic catalogue is available on disks. Only 13.9% of the respondents stated that they do not have an available electronic catalogue of their products and/or services in their organization.</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">A majority of the respondents stated that e-catalogues of products and services are available on their web sites (75.2%); and in different languages (65.8%). Less than half of the respondents stated that buyers can search their e-catalogues (45.3%) and that customer support is available on their web sites (40.2%). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <br></p>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><b><font size="1">60.9%</font></b></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><b><font size="1">49.6%</font></b></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><b><font size="1">43.5%</font></b></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><b><font size="1">24,3%</font></b></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><b><font size="1">13,9%</font></b></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">0%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">10%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">20%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">30%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">40%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">50%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">60%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">70%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">80%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">90%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">100%</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">Buyers can get</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">e-catalogue </font></span><span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1"><br></font></span><span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">on web</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">We can exchange</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">e-catalogue by</font></span><span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1"><br></font></span><span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1"> e-mail</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">We can exchange</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">e-catalogue</font></span><span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1"><br></font></span><span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1"> by CD</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">We can exchange</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">e-catalogue </font></span><span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1"><br></font></span><span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">by floppy</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">Buyers can't get</font></span>
+    </p>
+    <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+      <span style="COLOR:#000000; FONT-FAMILY:'Times New Roman'"><font size="1">ecatalogue</font></span>
+    </p>
+  
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Figure 6. Availability of electronic catalogue</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">One-third of the respondents stated that financial data of the organizations are available on the web site (33.3%). Less than a third of the respondents stated that prices of products and services (25.6%) and ordering of products and services are available on their web sites (17.9%).  Only a few respondents stated that on their web sites the payment process is supported (5.1%) and the customization of products and services (2.6%) (Figure 7). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">6.2. Use of the e-marketplace in large organizations in Slovenia</font></b></span>
+  </h1>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Currently, there are no business-to-business e-marketplaces operating in Slovenia. However, we can observe some interest expressed by organizations, such as Telekom Slovenije, various IS providers and some government institutions (Government Center of Informatics), to establish the e-marketplace. In addition, some companies are looking for opportunities to establish private e-marketplaces to involve all their partners from the supply chain. In Slovenia, there are several IT providers who would like to sell their software designed to operate e-marketplaces. On the other side, we have some organizations that have already joined the e-marketplaces outside Slovenia. Some of them were already awarded and won some business contracts (Pucihar 2002).</font></span>
+  </p>
+  <img alt="" border="0" height="288" src="dcv74wnb_12ff5cwgff_b.png" width="469"><p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Figure 7. Web site functions</font></i></span>
+  </p>
+  <h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3"> </font></b></span>
+  </h1>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The research results have shown that only a few organizations have any knowledge and experiences of e-marketplaces (Figure 8). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <img alt="" border="0" height="264" src="dcv74wnb_13543mj8cm_b.png" width="364"></p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="2"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Figure 8. Experiences with doing business in e-marketplaces</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Only 23.5% of the companies cited at least one business-to-business e-marketplace that is interesting for their organization. Only 11% of the organizations already have the experiences of doing business on the e-marketplace. The research results show that 2.5% of the organizations already have experiences of buying, 3.4% of selling, 3.4% of service providing and 1.7% of buying and selling on the e-marketplace. Three quarters (75.6%) of the organizations have no experiences and 13.4% of the organizations did not answer the question (Pucihar 2002).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The research results are in line with our expectations. The e-marketplaces are new ways of electronic commerce that have been developing very fast during the last few years. For that reason, it is very stimulating that there are some organizations in Slovenia who have already been doing business on the e-marketplace. We may find even more stimulating the results when we examine organizations’ intention to enter e-marketplaces in the future (Figure 9). </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <img alt="" border="0" height="296" src="dcv74wnb_14gnffj3gc_b.png" width="383"></p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Figure 9. Intention of organizations about entering e-marketplaces in the future</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">More than half of the organizations (56.3%) are thinking about entering e-marketplaces in the near future. More than one-tenth (11.8%) of the organizations intends to enter the e-marketplace by 2003 and more than a quarter (26.9%) of them in the future. Some organizations already know how they will enter the e-marketplace: 6.7% of them will enter as sellers, 2.5% as buyers and 7.6% as buyers and sellers. Less than one percent of the organizations (0.8%) intends to enter the e-marketplace as service providers. Only 11.8% of the organizations do not think about entering the e-marketplace in the future. Almost a quarter (21.8%) of the organizations has no opinion about entering the e-marketplace in the future, while one-tenth (10.1%) of the organizations did not answer the question (Pucihar 2002).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><i><font size="3"> </font></i></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">6.3. Organizational factors in large organizations in Slovenia</font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Relevant organization of the IS department and a high level of IT use are important factors for successful entering on e-marketplaces. Only 32.7% of the respondents confirmed that the IT support group in their organization is large enough to offer effective support to the users. Almost half of the respondents (45.4 %) believe that that their organization has adequate knowledge about IT. Many more respondents (69.8%) confirmed that they follow the development of and possibilities for the IT use in their organization</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> (Pucihar 2002).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Not many of the respondents have the awareness of the benefits of e-marketplace use. It may be one of the reasons for the low level of e-marketplace use in large organizations in Slovenia, and vice versa. Less than half of the respondents (44.5 %) disagree that in their organization they are awarded for successfully doing business on e-marketplaces. In addition, many respondents (34.3 %) disagree that they are aware of possible troubles when doing business on the e-marketplace. A good third of the respondents (37.8 %) disagree that employees in their organization know the benefits of doing business on the e-marketplace. Almost half of the respondents (49.6 %) also disagree that an organization’s employees know what e-marketplaces are the most suitable for their organization to enter </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">(Pucihar 2002).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Top management must support the use of new business models enabled by modern IT. Nowadays, it may be the only way for their organization to gain important competitive advantage in the global marketplace. More than half of the respondents agree that the top management in their organization supports new ways of business (67%) and investments in electronic business (54.6%) </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">(Pucihar 2002) (Table 2).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Many of the respondents could not define or answer if the costs of preparing for and entering the e-marketplace are low or high. This may explain the stated costs being neither high nor low for e-marketplace services (34.5%), cost of e-marketplace fees (32.8), costs of setting up and maintaining an electronic catalogue of products and/or services (40.3%) and IT costs (31.9%). The highest number of the respondents think that training and educational costs are high (44.5%) (Table 3). Their answers could be attributed to the lack of experience using e-marketplaces (Pucihar 2002).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The majority of respondents agrees that they are able to provide the standardized form of data. Almost half of the respondents (46.2%) agree that the characteristics of their products and services are easy to describe. More than half of the respondents (63%) agree that in their organization they are able to offer standardized data about products and services (Pucihar 2002) (Table 4).</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">6.4. Importance of Organizational Factors for successfully entering </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:42pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">the e-marketplace</font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">A majority of the respondents stated each of the following organizational factors as important for successfully entering the e-marketplace (Pucihar 2002):</font></span>
+  </p>
+  <ul type="disc">
+<li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Top management support to new IT and ways of business (87.2%);</font></i></span>
+    </li>
+    <li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Formulated e-commerce strategy (82.3%);</font></i></span>
+    </li>
+    <li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Trained employees with information technology and knowledge (84.4%)</font></i></span>
+    </li>
+    <li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Modern IT infrastructure (81.2%);</font></i></span>
+    </li>
+    <li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Readiness of business processes to connect with business partners (80.5%);</font></i></span>
+    </li>
+    <li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">IT department support in the organization (77.9%);</font></i></span>
+    </li>
+    <li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Use of an enterprise resource planning system that enables them to connect with business partners (76.3%);</font></i></span>
+    </li>
+    <li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Defined position of an electronic commerce executive in the organization (77.1%);</font></i></span>
+    </li>
+    <li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Availability of an electronic catalogue of products and services (67%);</font></i></span>
+    </li>
+    <li>
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Experiences with electronic commerce (67%).</font></i></span>
+    </li>
+  </ul>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The importance of organizational factors for a successful entry on the e-marketplace is shown in Table 5. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3"><br clear="all"></font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Table 2. Internal organizational factors</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="2"> </font></span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="zeroBorder" style=" MARGIN-LEFT:0pt; WIDTH:369.3pt" width="492">
+<tr>
+<td rowspan="3" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="197">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Organizational factors</font></b></span>
+        </p>
+      </td>
+      <td colspan="6" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="244">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">The level of agreeing in %</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Average value</font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Strongly disagree</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">2</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">3</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">4</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Strongly agree</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">No answer</font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">1</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">5</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">0</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2"> </font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td colspan="8" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="492">
+        <h4 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><i><font size="2">Organization of the IS departments and the level of use of information technology</font></i></b></span>
+        </h4>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#d9d9d9; VERTICAL-ALIGN:top" width="197">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Information technology support group is large enough to offer effective support to users.</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">10.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">21.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">31.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">19.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">13.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#d9d9d9; VERTICAL-ALIGN:top" width="197">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">In organization we have enough knowledge about information technology.</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">16.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">32.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">34.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">10.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.4</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#d9d9d9; VERTICAL-ALIGN:top" width="197">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">In organization we follow the development of and possibilities of the information technology use.</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">5.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">19.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">31.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">38.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">5.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.1</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td colspan="8" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="492">
+        <h4 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><i><font size="2">Awareness of benefits of e-marketplace use</font></i></b></span>
+        </h4>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#d9d9d9; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">In organization we are aware of successfully doing business on e-marketplaces.</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">14.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">30.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">18.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">10.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">6.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">19.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.6</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#d9d9d9; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">In organization we are aware of possible troubles of doing business on e-marketplace.</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">11.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">23.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">24.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">16.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">11.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">12.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.9</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#d9d9d9; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">In organization we know the benefits of doing business on e-marketplace. </font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">10.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">26.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">25.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">16.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">10.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">10.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.9</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#d9d9d9; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">In organization we know which e-marketplaces are the most suitable for our organization to enter. </font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">23.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">26.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">22.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">7.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">16.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.3</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td colspan="8" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="492">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><i><font size="2">The level of top management support for organization's entering e-marketplace</font></i></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#d9d9d9; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Top management supports new ways of business. </font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">1.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">10.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">16.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">38.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">28.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.8</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#d9d9d9; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Top management supports investments in electronic business. </font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">10.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">27.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="30">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">31.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="53">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">23.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="46">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="52">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.6</font></span>
+        </p>
+      </td>
+    </tr>
+</table>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"><br clear="all"></font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Table 3. Costs of preparing and entering the e-marketplace</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="zeroBorder" style=" MARGIN-LEFT:0pt">
+<tr>
+<td rowspan="3" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="185">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Organizational factors</font></b></span>
+        </p>
+      </td>
+      <td colspan="7" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="292">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">The level of costs' in %</font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="44">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Very</font></b></span>
+        </p>
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Low</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">2</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">3</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">4</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Very high</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">No answer</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Average value</font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle" width="44">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">1</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">5</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">0</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2"> </font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td colspan="8" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="477">
+        <h4 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="BACKGROUND-COLOR:#c0c0c0; FONT-FAMILY:'Times New Roman'"><b><i><font size="2">Costs of preparing for and entering e-marketplace</font></i></b></span>
+        </h4>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="185">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Costs of e-marketplace services</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="44">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">17.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">34.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">21.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">25.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.1</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="185">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Costs of e-marketplace fees</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="44">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">1.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">15.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">32.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">24.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">23.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.0</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="185">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Training and educational costs</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="44">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">6.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">33.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">35.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">9.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">15.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.6</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="185">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Costs of set-up and maintaining an electronic catalogue of products and/or services</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="44">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">8.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">40.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">31.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">5.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">14.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.4</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top" width="185">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Information technology costs</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle" width="44">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">14.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">31.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">31.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">5.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">15.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.3</font></span>
+        </p>
+      </td>
+    </tr>
+</table>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2"> </font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Table 4. </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Ability to ensure and provide the standardized form of data</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="zeroBorder" style=" MARGIN-LEFT:0pt">
+<tr>
+<td rowspan="3" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Organizational factors</font></b></span>
+        </p>
+      </td>
+      <td colspan="7" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">The level of agreeing in %</font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Strongly disagree</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">2</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">3</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">4</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Strongly agree</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">No answer</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Average value</font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">1</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">5</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">0</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2"> </font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td colspan="8" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <h4 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><i><font size="2">Ability to ensure and provide the standardized form of data</font></i></b></span>
+        </h4>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Characteristics of our products and services are easy to describe. </font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">5.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">16.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">21.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">28.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">17.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">10.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.4</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Our organization is able to offer standardized data about our products and services.</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">8.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">15.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">31.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">31.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">12.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.0</font></span>
+        </p>
+      </td>
+    </tr>
+</table>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"><br clear="all"></font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="2">Table 5. Importance of organizational factors</font></i></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2"> </font></b></span>
+  </p>
+  <table cellpadding="0" cellspacing="0" class="zeroBorder" style=" MARGIN-LEFT:0pt">
+<tr>
+<td rowspan="3" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Organizational factors</font></b></span>
+        </p>
+      </td>
+      <td colspan="7" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <h6 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">The level of importance of factors in %</font></b></span>
+        </h6>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Not important at all</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">2</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">3</font></b></span>
+        </p>
+      </td>
+      <td rowspan="2" style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">4</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Very important</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">No answer</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Average value</font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">1</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">5</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">0</font></b></span>
+        </p>
+      </td>
+      <td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2"> </font></b></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Top management support to new IT and ways of business</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">8.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">30.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">56.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.5</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Formulated e-commerce strategy</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">13.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">33.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">49.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.4</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Trained employees with knowledge</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">1.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">9.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">40.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">44.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.3</font></span>
+        </p>
+      </td>
+    </tr>
+<tr style="HEIGHT:12.15pt">
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Modern IT infrastructure</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">1.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">12.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">41.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">40.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">5.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.3</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Readiness of business processes to connect with business partners</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">11.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">35.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">44.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">5.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.3</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">IT department support in the organization</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">14.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">38.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">39.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.2</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Use of enterprise resource planning system that enables connecting with business partners</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">1.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">2.5</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">14.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">33.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">43.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">5.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.2</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Defined position of electronic commerce executive in organization</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">7.6</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">11.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">39.8</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">37.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.2</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.1</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Availability of electronic catalogue of products and services</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">5.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">16.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">33.9</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">33.1</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">11.0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">4.1</font></span>
+        </p>
+      </td>
+    </tr>
+<tr>
+<td style="BACKGROUND-COLOR:#c0c0c0; VERTICAL-ALIGN:top">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Experiences with electronic commerce</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">0</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">26.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">40.7</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">26.3</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.4</font></span>
+        </p>
+      </td>
+      <td style=" VERTICAL-ALIGN:middle">
+        <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+          <span style="FONT-FAMILY:'Times New Roman'"><font size="2">3.9</font></span>
+        </p>
+      </td>
+    </tr>
+</table>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3"> </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3"> </font></b></span>
+  </p>
+  <h1 style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">7. RECOMMENDATIONS</font></b></span>
+  </h1>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3"> </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">If an organization wants to enter an e-marketplace successfully, it is important that it has clearly defined the strategy of entering the e-marketplace. It needs to know what the goals of doing business on the e-marketplace are. It is important that an organization has a clear vision of whether it will enter the e-marketplace as a buyer or a seller. Since there are many e-marketplaces present in the global market, it is important that the organization knows the e-marketplaces that are relevant to its business and its goals. The organization needs to investigate what is the process of entering the e-marketplace, what types of services are available, what is the price to subscribe and use a service, etc. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">It is also important that the top management supports the project of entering the e-marketplace and that they have a clear vision and strategy how they will exploit the benefits of this new way of doing business. A defined position of an electronic commerce executive in an organization might elevate the importance of electronic commerce and electronic business for the organization. It is also important that employees are educated and trained for such a way of doing business. Usually the e-marketplace providers offer all the necessary training on how to use different e-marketplace software.</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">It is important that an organization is aware of the costs that will appear by entering the e-marketplace. In addition to the direct costs, such as e-marketplace annual fees and service fees, organizations will also be faced with various indirect costs, such as training costs, investments in new technology or maybe even investments in setting up and maintaining an e-catalogue of products and services. Only if the organization has a strong vision about entering the e-marketplace and if it is aware of the additional costs that may appear, it will be able to assure the necessary resources. Every organization has to calculate the expected benefits and costs because, in any case, the expected benefits have to be higher than the expected costs in order to make a choice about entering the e-marketplace.</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The availability of an electronic commerce catalogue of products and services is important. Organizations that intend to enter the e-marketplace must be able to offer standardized electronic data about their products and services. The use of electronic commerce standards enables the connection of different information systems. This is especially important in the case of entering the e-marketplace because many organizations that are using different information systems need to communicate with each other. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Almost all e-marketplaces operate on the Web-based information systems, thus it is important that the modern IT infrastructure, which enables Internet commerce, is in place in the organization. Many e-marketplaces operate on the basis of information systems integration, this being especially valid for consortia based e-marketplaces. As many organizations have implemented enterprise resource planning systems, it is important that they are able to connect their systems with other information systems of business partners. The use of electronic commerce standards and different interfaces for business-to-business systems integration make integration processes much easier. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">It is important that organizations have their business processes ready to be connected with business partners. They must change and modify business processes to the new way of doing business. The necessary changes of business processes are dependent on the type of e-marketplace that the organization is willing to enter. For example, an organization will have to make more changes if it decides to enter a private or consortia-based e-marketplace rather than third party e-marketplaces. To enter a private or consortia-based e-marketplace, an organization has to consider changing its business processes because the next step will usually be the integration of information systems. To enter an independent third party e-marketplace, it is usually enough to use the Web browser to make an order or to participate in an on-line auction.</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">The e-marketplaces are new business models that are developing and changing very rapidly. Therefore, it is important that the business environment encourages organizations to use such models to gain a competitive advantage in the global market. Governments need to play a key role in such activities. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3"> </font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="3">REFERENCES</font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <ol type="1">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Auer, T.; Reponen, T. (1997): “Information System Strategy Formation Embedded into a Continuous Organizational Learning Process”. </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Information Resource Management Journal,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> 10 (Spring), pp. 32–43.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Archer, N.; Gebauer, J. (2000): Managing in the Context of the New Electronic Marketplace. </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Proceedings 1st World Congress on the Management of Electronic Commerce,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Hamilton, Ontario, Canada, January pp. 19 – 21.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Bailey, J.; Bakos, J. Y. (1997): An Exploratory Study of the Emerging Role of Electronic Intermediaries. </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">International Journal of Electronic Commerce,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Vol. 1.3. Spring, pp. 7 – 20.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Bakos, J. Y. (1991): A Strategic Analysis of Electronic Marketplaces. </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">MIS Quarterly,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> September, pp. 295-310.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Baldi, S.; Borgman, H. P. (2001): Cons</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">ortium-Based B2B e-Marketplaces – A Case Study in the Automotive Industry. </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">14th Bled Electronic Commerce Conference: e-Everything: e-Commerce, e-Government, e-Household, e-Democracy.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Editors: O’Keefe, B.; Loebbecke, C.; Gričar, J.; Pucihar, A.; Lenart, G. </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Bled, Slovenia, June 25-26, pp. 629-645.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Barling, B.; Stark, H. (1998): </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">“Business-to-business electronic commerce: Opening the market”. </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Ovum, June/August/October. http://www.ovum.com/.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Berryman, K.; Harrington, L. F.; Layton-Rodin, D.; Rerolle, V. (1998): “Electronic Commerce: Three emerging strategies”. </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">The McKinsey Quarterly,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> 1998, http://www.mckinseyquarterly.com/electron/elco98.asp</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Bharadwaj, A. S. (2000): «A Resource-Based Perspective on Information Technology Capability and Firm Performance: An Empirical Investigation». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">MIS Quarterly,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Vol. 24, No. 1, pp. 169-196.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Buescher, R.; Vittet-Philippe P. (2000): «B2B e-Commerce: Impact on Enterprise Policy – A First Assessment». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">DG Enterprise e-Business Report No. 1,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> European Commission, Enterprise Directorate-General, July.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Christiaanse, E.; Sinnecker, R.; Mossinkoff, M. (2001): The Impact of B2B </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Exchanges on Brick and Mortar Intermediaries: The Elemica Case</font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">. The Proceedings of the 9th ECIS Conference: Global Co-operation in the New Millennium.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Editors: Smiths</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">on, S.; Gričar, J.; Podlogar, M.; Avegerinou, S. Bled, Slovenia, June 27-29, pp. 422-432.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Chircu A. M. &amp; Kauffman R .J. (1999); «Strategies for Internet Middlemen in the Intermediation – Disintermediation - Reintermediation Cycle».</font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3"> Electronic Markets, </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Vol.</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> 8, No. 2 (May 1999), pp. 109-117.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Chircu A. M. &amp; Kauffman R. J. (2000): «Reintermediation Strategies in Business-to-Business Electronic Commerce» Int'l J. of Electronic Markets Vol. 4, No. 4 (Summer), pp. 7-42</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Choi, S. Y.; Stahl, D.; Whinston, A. (1997): </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">«The economics of electronic commerce».</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Indianapolis, IN: Macmillan Technical Publishing.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Choudhury, V.; Hartzel, K. S.; Konsynski, B. R. (1998): «Uses and Consequences of Electronic Markets: An Empirical Investigation in the Aircraft Parts Industry». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">MIS Quarterly.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Vol. 22, No. 4, December 1998, pp. 471-507.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Clarke, R. (2001): «Towards a Taxonomy of B2B e-Commerce Schemes». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">14th Bled Electronic Commerce Conference. E-Everything: e-Commerce, e-Government, e-Household, e-Democracy. Proceedings Volume 1: Research.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Edited by: O'Keefe, B.; Loebbecke, C.</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">; Gričar, J.; Pucihar, A.; Lenart, G. Bled, Slovenia, June 25 – 26, 2001.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Clemons, E.K., S. Reddi, P., and M.C. Row (1993): «The impact of information technology on the organization of economic activity: The “move to the middle” hypothesis». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Journal of Man</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">agement Information Systems.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Vol. 10 No. 2, pp. 9-35.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Dai; Q.; Kauffman, R. J. (2001): «Business Models for Internet-Based e-Procurement Systems and B2B Electronic Market: An Exploratory Assessment». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Thirty-Fourth Annual Hawaii International Conference on System Sciences (HICSS-34),</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Maui, HI, January 3-6.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">DeSisto, R. (2000): «e-Marketplaces: Place your bets of fold your cards». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Gartner Symposium  ITXPO 2000, Insight for the connected world.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Walt Disney World, Orlando, Florida, pp. 16-20, October 2000.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Esichaikul, V., Chavananon, S. (2001): «Electronic Commerce and Electronic Business Implementation Success Factors». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Proceedings of the 14th Bled Electronic Commerce </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">              </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Conference, e-Everything: e-Commerce, e-Government, e-Household, e-Democracy.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> 25.-26. June, Bled, Slovenia, Edited by: O'Keefe, B.; Loebbecke, C.; </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Gričar, J.; Pucihar, A.; Lenart, G., Moderna organizacija, Kranj.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Enterworks (2000): </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">“Challenges and Solutions in Supplier Enablement: Opportunities for Leveraging E-marketplaces to Your Advantage”. </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Executive Overview, Enterworks Inc. www.enterworks.com (2</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">8. November, 2001)</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Grewal, R.; Comer, J. M.; Mehta, R. (2001): «An Investigation into the Antecedents of Organizational Participation in Business-to-Business Electronic Markets». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Journal of Marketing.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Vol. 65 (July), pp. 17-33.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Haag, S.; Cummings, M.; McCubbrey, D. J. (2002): </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Management Information Systems for the Information Age, </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Third Edition. Mc Graw-Hill Irwin. </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Kaplan, S.; Sawhney, M. (2000): «e-Hubs: The New B2B Marketplaces». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Harvard Business Review.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> May – June, pp. 97 – 103.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Lenz, C. (2000): «e-Marketplaces: How are they changing your business environment». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Gartner  Symposium ITXPO 2000, Insight for the connected world</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">. Walt Disney World, Orlando, Florida, USA. 16-20 October 2000.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Malone, T. W.; Yates, J.; Benjamin, R. I. (1987): «Electronic Markets and Electronic Hierarchies». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Communications of the ACM.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Vol. 30, No. 6, June 1987.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Mello, A. (2000): </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">How e-markets fail suppliers.</font></i></span> <span style="FONT-FAMILY:'Times New Roman'"><font size="3">ZDNet. September 26., http://techupdate.zdnet.com/techupdate/stories/main/0,14179,2814612,00.html?chkpt=zdnnecrttu </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Podlogar,</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> M. (2003): «Model dejavnikov elektronskega poslovanja v procesu oskrbovanja: čas in stroški obravnavanja podatkov posla». </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">(A Model of Electronic Commerce Critical Success Factors in Procurement Process: Time and Costs of Business Data Processing). </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Organiz</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">acija</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">, March. 2003, Vol. 36, No. 3, pp. 127-139. </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Porter, M. E. in Millar, V. E. (1985): «How information gives you competitive advantage». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Harvard Business Review.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Vol. 63, No. 4, pp. 149-160. July-August.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Pucihar, A. (2002): </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">«Model dejavnikov vključevanja organizacije na elektronsko tržnico» (A model of factors influencing on organization's entering e-marketplace).</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Doctoral dissertation. University of Maribor, Faculty of Organizational Sciences, Kranj, Slovenia</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Pucihar, A. (2003): «Model dejavnikov organiziranosti organizacije za uspešno vključevanje na </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">              </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">elektronske tržnice». (Model of organizational factors for successful entering the electronic markets). </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Organizacija,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> March. 2003, Vol. 36, No. 3, pp. 140-151. </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Ramsdell, G. (2000): </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">«The real business of B</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">2B».</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> http://mckinseyquarterly.</font></span>
+    </li>
+  </ol>
+<p style=" MARGIN-LEFT:18pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3">com/electron/rebu00.asp</font></span>
+  </p>
+  <ol start="33" type="1">
+<li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Russ, N. (2001): </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">“E-marketplaces: New Challenges for Enterprise Policy, Competition and Standardisation. eEurope go Digital”.</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Workshop Report, Brussels, 23-24 April.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Segev, A.; Gebauer, J. and Färber (1999): Internet based Electronic Markets. </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Electronic Markets,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Vol. 9, No. 3, pp. 138-146.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Shaffer, G.; Zettlemeyer, F. (1999): </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">«The Internet as a Medium for Marketing Communications: Channel Conflict over the Provision of Information». </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Working Paper, June. </font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Steinfield, C.; Caby, L. (1993): «Strategic organizational applications of videotex among varying </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">              </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">network configurations». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Telematics and Informatics, </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">Vol. 10 No. 2, pp. 119-129.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Steinfield, C.; Caby, L.; Vialle, P. (1993): «Internationalization of the firm and the impacts of videotex networks». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Journal of Information Technology, </font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">7, pp. 213-222.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Streeter, L. A.; Kraut, R. E.; Lucas, H. C.; Caby, L. (1996): «How open data networks influence business performance and market structure». </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Communications of ACM,</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Vol. 39, No. 7, pp. 62-73.</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">The Economist</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> (1999): “The rise of the infomediary”. p. 351., June, 26. http://www.economist.com/editorial/freeforall/19990626/su3300.html</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Turban, E.; King, D.; Lee, J.; Warkentin, M.; Chung, M. H. (2002): </font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"><br></font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">«Electronic Commerce 2002. A managerial perspective».</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"> Prentice Hall, Pearson Education, Upper Saddle River, New Jersey 07458</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Wigand, R. T.; Benjamin, R. I. (1995): “Electronic Commerce: Effects on electronic markets”. Journal of Computer-Mediated Communication. [On-line], 1(3). http://www.ascusc.org/jcmc/vol1/issue3/wigand.html</font></span>
+    </li>
+    <li style=" TEXT-ALIGN:justify">
+      <span style="FONT-FAMILY:'Times New Roman'"><font size="3">Zwass, V. (1998): “Structure and macro-level impacts of electronic commerce: From technological infrastructure to electronic marketplaces”. K. E. Kendall (Ed.), </font></span><span style="FONT-FAMILY:'Times New Roman'"><i><font size="3">Emerging Information Technologies</font></i></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">. Thousand Oaks, CA: Sage Publications. http://www.mhhe.com/business/mis/zwass/</font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3"><br></font></span><span style="FONT-FAMILY:'Times New Roman'"><font size="3">/ecpaper.html </font></span>
+    </li>
+  </ol>
+<p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"><br clear="all"></font></span><span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">ORGANIZACIJSKI ČIMBENICI USPJEŠNOG ULASKA NA ELEKTRONIČKA TRŽIŠTA</font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="2"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:center">
+    <span style="FONT-FAMILY:'Times New Roman'"><b><font size="2">Sažetak</font></b></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="2"> </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="2">Privlačnost poslovanja putem (World Wide) Weba je jasna: agregiranjem velikog broja kupaca i prodavača, te automatiziranjem transakcija, elektronička tržišta povećavaju izbor dostupan kupcima, ali i pružaju prodavateljima pristup novim kupcima, te smanjuju transkacijske troškove za sve učesnike u trgovanju. Ulaz na elektroničko tržište je povezan s reinženjeringom, povezivanjem informacijskih sustava, stjecanjem novih znanja putem treninga i učenja, te investiranjem u nove informacijske tehnologije i software. Organizacija koja namjerava s uspjehom ući u elektroničko tržište, mora se za takav korak pažljivo pripremiti. Samo će takav pristup organizaciji otvoriti potpuni pristup svim mogućnostima koje stoje na raspolaganju, te dovesti do očekivanih poslovnih rezultata. U radu se predstavljaju različiti oblici elektroničkih tržišta, te uporaba elektroničkih tržišta u poslovanju. Nadalje se iznose rezultati istraživanja provedenog u 250 velikih slovenskih poduzeća. U istraživanju se razmatra trenutna razina korištenje elektroničke trgovine i tržišta u velikim slovenskim poduzećima, te se izdvajaju organizacijski čimbenici koji se cijene bitnim za uspješan ulazak na elektronička tržišta. U zaključku rada se iznose preporuke za organizacije koje namjeravaju ući na elektroničko tržište. </font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="2">71</font></span>
+  </p>
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:18pt">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="3"> </font></span>
+  </p>
+</div>
+<div class="Section2">
+  <p style=" MARGIN-LEFT:0pt; MARGIN-RIGHT:0pt; TEXT-ALIGN:justify">
+    <span style="FONT-FAMILY:'Times New Roman'"><font size="2"> </font></span>
+  </p>
+</div>
+<br>
+</body>
+</html>

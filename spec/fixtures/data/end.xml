@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+
+	
+<root xmlns="http://www.w3.org/1999/XSL/Transform">
+	<global>
+		<images>
+			<image title="Header Image"/>
+			<image title="Footer Image"/>
+			<image title="Logo">
+				<number title="X" path="logoX"><![CDATA[49]]></number>
+				<number title="Y" path="logoY"><![CDATA[27]]></number>
+				<simpleCollection title="Tags"><![CDATA[tagA,tagB,tagC]]></simpleCollection>
+				<range title="Width" min="0" max="300"><![CDATA[200]]></range>
+				<boolean title="Generate Thumbnail"><![CDATA[true]]></boolean>
+			</image>
+		</images>
+	
+		<audio>
+			<number title="Starting Volume" path="startingVolume"><![CDATA[.3]]></number>
+		</audio>
+	
+		<content>
+			<string path="copyright" title="Copyright Notice"><![CDATA[Copyright 2009 Your Company All Rights Reserved]]></string>
+			<color path="copyrightColor" title="Copyright Text Color"><![CDATA[0x333333]]></color>
+		</content>
+	</global>
+
+	<pages>
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Content]]></string>
+			<number title="X" path="logoX"><![CDATA[49]]></number>
+			<number title="Y" path="logoY"><![CDATA[27]]></number>
+			<simpleCollection title="Tags"><![CDATA[tagA,tagB,tagC]]></simpleCollection>
+			<range title="Width" min="0" max="300"><![CDATA[200]]></range>
+			<boolean title="Generate Thumbnail"><![CDATA[true]]></boolean>
+			<subPages title="Subpages">
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Layout Style 1]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Layout Style 2]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Layout Style 3]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			</subPages>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Services]]></string>
+			<subPages title="Subpages">
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Flash Development]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Brand Creation]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Website Design]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Photography]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Website Hosting]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Cinematography]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			</subPages>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Portfolio]]></string>
+			<subPages title="Subpages">
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Flash Portfolio]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Brand Portfolio]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Web Design Portfolio]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Photography Portfolio]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			</subPages>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Gallery]]></string>
+			<subPages title="Subpages">
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Album 1]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Album 2]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Album 3]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Album 4]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			</subPages>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Blog]]></string>
+			<subPages title="Subpages">
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Large Articles]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Small Articles]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			</subPages>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[The Crew]]></string>
+			<subPages title="Subpages">
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Management]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Directors]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Developers]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Artists]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			</subPages>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Sub Pages]]></string>
+			<subPages title="Subpages">
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Features]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Photos]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Content]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Contact]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Your SWF]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Link]]></string>
+					<images>
+						<image title="Background Image"/>
+					</images>
+				</subPage>
+			</subPages>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Videos]]></string>
+			<subPages title="Subpages">
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Single Video]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			
+				<subPage path="page/subPage">
+					<![CDATA[]]>
+					<string path="page/subPage/name" title="Name"><![CDATA[Video Gallery]]></string>
+					<images>
+						<image title="Background Image">
+							<file path="page/subPage/bgImage" title="File Location"><![CDATA[site_images/bg1.jpg]]></file>
+							<boolean path="page/subPage/tileBgImage" title="Tile the Image?"><![CDATA[true]]></boolean>
+						</image>
+					</images>
+				</subPage>
+			</subPages>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[SlideShow]]></string>
+			<subPages title="Subpages"/>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Your SWF]]></string>
+			<subPages title="Subpages"/>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Link]]></string>
+			<subPages title="Subpages"/>
+		</page>
+	
+		<page path="page" title="Page">
+			<![CDATA[]]>
+			<string path="page/name"><![CDATA[Contact]]></string>
+			<subPages title="Subpages"/>
+		</page>
+	</pages>
+</root>
+
+
