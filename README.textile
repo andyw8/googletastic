@@ -1,0 +1,17 @@
+h1. Googletastic
+
+Making it more than easy to save everything on Google, so all your app has to do is say how to define pretty urls and formatting.
+
+h2. Installing
+
+<code>
+sudo gem install googletastic
+</code>
+
+h3. Installing from Source
+
+<code>
+git clone git@github.com:viatropos/googletastic.git
+cd googletastic
+rake install
+</code>
