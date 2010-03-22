@@ -1,3 +1,3 @@
 class Form < Googletastic::TestModel
-  googletastic :form
+  googletastic :form, :form_only => true, :action => /asdf/
 end

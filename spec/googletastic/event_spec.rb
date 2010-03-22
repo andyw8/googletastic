@@ -20,11 +20,15 @@ describe Googletastic::Event do
     @event.title = "I CHANGED MY TITLE"
     @event.description = "Now I have a description?"
     @event.where = "Santa Rosa"
-    @event.save
+#    @event.save
   end
   
   it "should get a 'content not modified' response from google" do
     pending
+  end
+  
+  it "should successfully add to a model via 'googletastic :event'" do
+    Event.new
   end
   
 end

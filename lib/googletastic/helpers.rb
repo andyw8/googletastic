@@ -8,7 +8,7 @@ module Googletastic::Helpers
     def googletastic(model, options = {})
       include ("Googletastic::Helpers::#{model.to_s.camelize}").constantize
     end
-
+    
   end
 end
 

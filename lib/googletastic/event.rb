@@ -148,5 +148,5 @@ class Googletastic::Event < Googletastic::Base
     end
     
   end
-
+  
 end

@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'rake'
 require 'rake/clean'
-require 'rbconfig'
+#require 'rbconfig'
 require 'nokogiri'
 require 'active_support'
 require 'active_record'

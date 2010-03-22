@@ -1,6 +1,6 @@
-module Googletastic::Helpers::Document
+module Googletastic::Helpers::Event
   
-  def self.included(base)
+  def self.included(base, &block)
     base.extend ClassMethods
     base.class_eval do
       include InstanceMethods

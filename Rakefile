@@ -16,23 +16,24 @@ end
 APP_ROOT = File.dirname(__FILE__)
 
 spec = Gem::Specification.new do |s|
-  s.name = "googletastic"
-  s.version = Googletastic::VERSION
-  s.date = "Tue Nov 03 20:12:47 -0700 2009"
-  s.summary = "Breaking down files"
-  s.email = "lancejpollard@gmail.com"
-  s.homepage = "http://github.com/viatropos/googletastic"
-  s.description = "Googletastic: A Ruby Gem"
-  s.has_rdoc = true
-  s.authors = ["Lance Pollard"]
-  s.files = %w(README.textile Rakefile) + 
-    Dir["{googletastic,lib,spec}/**/*"] - 
-    Dir["spec/tmp"]
-  s.extra_rdoc_files = %w(README.textile)
-  s.require_path = "lib"
-#  s.executable = "googletastic"
-#  s.add_dependency("extlib")
-#  s.add_dependency("rubigen", ">= 1.0")
+  s.name              = "googletastic"
+  s.version           = Googletastic::VERSION
+  s.date              = "Mon Mar 22 20:12:47 -0700 2010"
+  s.summary           = "More than Syncing Rails Apps with the Google Data API"
+  s.email             = "lancejpollard@gmail.com"
+  s.homepage          = "http://github.com/viatropos/googletastic"
+  s.description       = "Googletastic: A New Way of Googling"
+  s.has_rdoc          = true
+  s.authors           = ["Lance Pollard"]
+  s.files             = %w(README.textile Rakefile) + 
+                          Dir["{googletastic,lib,spec}/**/*"] - 
+                          Dir["spec/tmp"]
+  s.extra_rdoc_files  = %w(README.textile)
+  s.require_path      = "lib"
+  s.add_dependency("nokogiri")
+  s.add_dependency("activesupport", ">= 2.3.5")
+  s.add_dependency("activerecord", ">= 2.3.5")
+  s.add_dependency("gdata")
 end
 
 desc "Create .gemspec file (useful for github)"

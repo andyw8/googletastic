@@ -29,6 +29,14 @@ class Googletastic::Document < Googletastic::Base
     "http://docs.google.com/View?docID=#{id}&revision=_latest"
   end
   
+  def update_url
+    if has_attachment?
+      "http://docs.google.com/feeds/media/private/full/#{self.id}"
+    else
+      "http://docs.google.com/feeds/documents/private/full/#{self.id}"
+    end
+  end
+  
   def download_url(format = "pdf")
     "#{FEED_BASE}/download/documents/Export?docID=#{id}&exportFormat=#{format}"
   end
@@ -39,6 +47,14 @@ class Googletastic::Document < Googletastic::Base
   
   def self.feed_url
     "#{FEED}"
+  end
+  
+  def download(format = "pdf")
+    self.class.first(:url => download_url(format))
+  end
+  
+  def has_access?(email)
+    self.class.first(:url => update_url)
   end
   
   attr_reader :body
