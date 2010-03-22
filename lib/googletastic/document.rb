@@ -70,6 +70,11 @@ class Googletastic::Document < Googletastic::Base
     
   end
   
+  def new_record?
+    return false if !self.id.nil?
+    return self.class.first(:title => self.title, :exact_title => true).nil?
+  end
+  
   # Time.now.xmlschema
   class << self
     VALID_CATEGORIES = /^(document|spreadsheet|folder|presentation|pdf|form)$/ unless defined?(VALID_CATEGORIES)
@@ -77,7 +82,7 @@ class Googletastic::Document < Googletastic::Base
     def valid_queries
       {
         :title => "title",
-        :title_exact => "title-exact",
+        :exact_title => "title-exact",
         :opened_after => "opened-min",
         :opened_before => "opened-max",
         :edited_after => "edited-min",

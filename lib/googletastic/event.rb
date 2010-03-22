@@ -1,8 +1,21 @@
 class Googletastic::Event < Googletastic::Base
   
-  attr_accessor :created_at, :updated_at, :title, :content
+  attr_accessor :created_at, :updated_at, :title, :description
   attr_accessor :who, :start_time, :end_time, :where, :status, :comments
   attr_accessor :guests_can_join, :guests_can_invite, :guests_can_modify, :guests_can_see_guests, :sequence
+  # not yet implemented
+  attr_accessor :repeats, :calendar_id
+  
+  def new_record?
+    return false if !self.id.nil?
+    return true
+    # not yet using this
+    return self.class.first(:start_time => self.start_time, :end_time => self.end_time).nil?
+  end  
+    
+  def edit_url
+    "http://www.google.com/calendar/feeds/default/private/full/#{self.id.split("/").last}"
+  end
   
   class << self
     
@@ -48,7 +61,7 @@ class Googletastic::Event < Googletastic::Base
       records = xml.xpath("//atom:entry", ns_tag("atom")).collect do |record|
         id          = record.xpath("atom:id", ns_tag("atom")).first.text
         title       = record.xpath("atom:title", ns_tag("atom")).first.text
-        content     = record.xpath("atom:content", ns_tag("atom")).first.text
+        description = record.xpath("atom:content", ns_tag("atom")).first.text
         created_at  = record.xpath("atom:published", ns_tag("atom")).first.text
         updated_at  = record.xpath("atom:updated", ns_tag("atom")).first.text
         
@@ -76,7 +89,7 @@ class Googletastic::Event < Googletastic::Base
         Googletastic::Event.new(
           :id => id,
           :title => title,
-          :content => content,
+          :description => description,
           :created_at => created_at,
           :updated_at => updated_at,
           :status => status,
@@ -96,15 +109,40 @@ class Googletastic::Event < Googletastic::Base
     
     def marshall(record)
       Nokogiri::XML::Builder.new { |xml| 
-        xml.entry(ns_xml("atom", "gCal")) {
+        xml.entry(ns_xml("atom", "gCal", "gd")) {
           if record.id
-            xml.id {
-              xml.text "#{ID}#{record.id}"
+            xml.id_ {
+              xml.text record.id
+            }
+          end
+          if record.created_at
+            xml.published {
+              xml.text record.created_at
+            }
+          end
+          if record.updated_at
+            xml.updated {
+              xml.text record.updated_at
             }
           end
           xml.title {
             xml.text record.title
           }
+          xml.content {
+            xml.text record.description
+          }
+          record.who.each do |who|
+            xml["gd"].who(
+              :email => who.email, 
+              :rel => "http://schemas.google.com/g/2005#event.#{who.role}",
+              :valueString => who.name
+            ) {
+              xml["gd"].attendeeStatus(:value => "http://schemas.google.com/g/2005#event.#{record.status}")
+            }
+          end unless record.who.nil?
+          xml["gd"].where("valueString" => record.where)
+          
+          xml["gd"].when("startTime" => record.start_time, "endTime" => record.end_time)
         }
       }.to_xml
     end

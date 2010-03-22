@@ -38,7 +38,7 @@ class Googletastic::Base < Hash
   end
   
   def new_record?
-    true
+    self.id.nil?
   end
   
   def to_xml
@@ -71,13 +71,18 @@ class Googletastic::Base < Hash
     
     def create
       if has_attachment?
-        client.post_file(self.class.feed_url, self.attachment_path, mime_type, self.to_xml)
+        self.class.client.post_file(self.class.feed_url, self.attachment_path, mime_type, self.to_xml)
       else
-        client.post(self.class.feed_url, self.to_xml)
+        self.class.client.post(self.class.feed_url, self.to_xml)
       end
     end
     
     def update(attribute_names = @attributes.keys)
+      if has_attachment?
+        self.class.client.put_file(self.class.feed_url, self.attachment_path, mime_type, self.to_xml)
+      else
+        self.class.client.put(self.edit_url || self.class.feed_url, self.to_xml)
+      end
     end
   
 end
