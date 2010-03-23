@@ -43,6 +43,14 @@ describe Googletastic::Document do
     url.should =~ /#{Googletastic::Document::FEED.gsub(/full$/, "expandAcl")}/
   end
   
+  it "should list all spreadsheets" do
+    sheets = Googletastic::Spreadsheet.all
+    sheets.length.should > 0
+    sheets.each do |sheet|
+      puts sheet.to_xml
+    end
+  end
+  
   # DOWNLOADING
   it "should get document by 'kind'" do
     

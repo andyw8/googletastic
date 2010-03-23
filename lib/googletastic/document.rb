@@ -1,6 +1,6 @@
 class Googletastic::Document < Googletastic::Base
   
-  ID = "https://docs.google.com/feeds/default/private/full/document%3A"
+  ID = "https://docs.google.com/feeds/default/private/full/"
   FEED_BASE = 'http://docs.google.com/feeds' unless defined?(FEED_BASE)
   FEED = 'http://docs.google.com/feeds/documents/private/full' unless defined?(FEED)
   BASE_URL = "http://docs.google.com" unless defined?(BASE_URL)
@@ -43,6 +43,10 @@ class Googletastic::Document < Googletastic::Base
   
   def edit_url
     "#{BASE_URL}/Doc?docid=#{id}"
+  end
+  
+  def self.spreadsheet_url
+    "#{FEED_BASE}/default/private/full/-/spreadsheet"
   end
   
   def self.feed_url
@@ -116,6 +120,10 @@ class Googletastic::Document < Googletastic::Base
       }.merge(super)
     end
     
+    def spreadsheets
+      self.all(:url => "#{self.feed_url}/-/spreadsheet")
+    end
+    
     def client_class
       "DocList"
     end
@@ -161,8 +169,8 @@ class Googletastic::Document < Googletastic::Base
       Nokogiri::XML::Builder.new { |xml| 
         xml.entry(ns_xml("atom", "exif", "media", "gphoto", "openSearch")) {
           if record.id
-            xml.id {
-              xml.text "#{ID}#{record.id}"
+            xml.id_ {
+              xml.text "#{Googletastic::Document::ID}#{record.id}"
             }
           end
           record.categories.each do |category|

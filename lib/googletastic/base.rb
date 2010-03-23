@@ -37,4 +37,8 @@ class Googletastic::Base < Hash
     
   end
   
+  def to_xml
+    self.class.marshall(self)
+  end
+  
 end

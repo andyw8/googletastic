@@ -39,7 +39,7 @@ module Googletastic::Mixins::Finders
     def find_every(options)
       find_by_api(options)
     end
-
+    
     def find_from_ids(ids, options)
       expects_array = ids.first.kind_of?(Array)
       return ids.first if expects_array && ids.first.empty?
@@ -48,7 +48,7 @@ module Googletastic::Mixins::Finders
       
       case ids.size
         when 0
-          raise RecordNotFound, "Couldn't find #{name} without an ID"
+          raise "Couldn't find #{self.to_s} without an ID"
         when 1
           result = find_one(ids.first, options)
           expects_array ? [ result ] : result
@@ -68,6 +68,7 @@ module Googletastic::Mixins::Finders
     
     def find_by_api(options)
       url = build_url(options)
+      puts "URL: #{url}"
       agent = options.has_key?(:client) ? options[:client] : client
       data = agent.get(url)
       return data if options.has_key?(:raw) and options[:raw] == true

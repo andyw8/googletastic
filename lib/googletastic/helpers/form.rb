@@ -24,7 +24,7 @@ module Googletastic::Helpers::Form
 
     # eval
     base.class_eval <<-"end_eval", __FILE__, __LINE__
-      def find_via_#{Googletastic[self][:as]}(*args)
+      def self.find_with_#{Googletastic[self][:as]}(*args)
         google_records = Googletastic::Form.find(*args)
         foreign_keys = google_records.collect { |record| record.id }
         records = find(foreign_keys)
@@ -43,10 +43,12 @@ module Googletastic::Helpers::Form
     base.class_eval do
       attr_accessor :"#{Googletastic[self][:as]}"
       
+      Googletastic::Form.redirect_to = Googletastic[self][:redirect_to] if Googletastic[self].respond_to?(:redirect_to)
+      
       if base.is_a?(ActiveRecord::Base)
         before_validation       :clean_form_key
-        validates_presence_of   :form_key
-        validates_uniqueness_of :form_key
+        validates_presence_of   :"#{Googletastic[self][:as]}"
+        validates_uniqueness_of :"#{Googletastic[self][:as]}"
         validate :validate_formkey_is_valid
         before_save :sync_with_google
         
@@ -56,14 +58,8 @@ module Googletastic::Helpers::Form
           end if Googletastic[self].has_key?(:sync)
         end
         
-        def clean_form_key
-          if self["#{Googletastic[self][:method_name]}"].form_key =~ /=(.*)$/
-            #{Googletastic[self][:method_name]}.form_key = $1
-          end
-        end
-        
         def validate_form_key_is_valid
-          case fetch_form_page
+          case self["#{Googletastic[self][:as]}"].get
           when Net::HTTPSuccess
             true
           else

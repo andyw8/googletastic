@@ -55,10 +55,6 @@ module Googletastic::Mixins::Parsing
       @cache_result != false || self.class.cache_result?
     end
     
-    def to_xml
-      self.class.marshall(self)
-    end
-    
     def from_xml(xml)
       self.class.unmarshall(xml)
     end
