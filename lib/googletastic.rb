@@ -9,6 +9,19 @@ require 'gdata'
 
 GOOGLETASTIC_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(GOOGLETASTIC_ROOT)
 
+class Module
+  def include_class_and_instance_modules
+    self.module_eval <<-eos 
+      def self.included(base)
+        base.extend(ClassMethods)
+        base.class_eval do
+          include InstanceMethods
+        end
+      end
+    eos
+  end
+end
+
 def require_local(path, from = __FILE__)
   files(path, from) {|file| require file}
 end
@@ -25,7 +38,7 @@ module Googletastic
   # :stopdoc:
   VERSION = '0.0.1'
   # :startdoc
-  class << self; attr_accessor :keys, :clients end
+  class << self; attr_accessor :keys, :clients, :options; end
 
   def self.credentials
     return self.keys if self.keys
@@ -43,17 +56,34 @@ module Googletastic
 	  client.clientlogin(credentials[:username], credentials[:password])
 	  self.clients[model] = client
   end
+  
+  def self.options_for(klass, value = {})
+    self.options ||= {}
+    klass = klass.is_a?(Class) ? klass : klass.class
+    name = klass.to_s.underscore.downcase.to_sym
+    if value and !value.blank?
+      value.symbolize_keys!
+      self.options[name] = value
+    else
+      self.options[name] ||= {}
+    end
+    self.options[name]
+  end
+  
+  def self.[](value)
+    self.options_for(value)
+  end
 end
 
 # main includes
 require File.dirname(__FILE__) + '/googletastic/mixins'
 require File.dirname(__FILE__) + '/googletastic/base'
 
-files("googletastic/mixins/*") do |file|
-  Googletastic::Base.send(:include, "Googletastic::Mixins::#{File.basename(file, '.rb').camelize}".constantize)
-end
-
 require_local "googletastic/*"
+
+#files("googletastic/mixins/*") do |file|
+#  Googletastic::Base.send(:include, "Googletastic::Mixins::#{File.basename(file, '.rb').camelize}".constantize)
+#end
 
 if defined?(ActiveRecord::Base)
   ActiveRecord::Base.send(:include, Googletastic::Helpers)

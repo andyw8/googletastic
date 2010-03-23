@@ -28,7 +28,7 @@ describe Googletastic::Event do
   end
   
   it "should successfully add to a model via 'googletastic :event'" do
-    Event.new
+    Event.new.hello
   end
   
 end

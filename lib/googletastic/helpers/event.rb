@@ -11,6 +11,7 @@ module Googletastic::Helpers::Event
     attr_accessor :google_doc
     
     def hello
+#      puts _googletastic_options.inspect + " OPTIONS!"
     end
     
     def google_doc

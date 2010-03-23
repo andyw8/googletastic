@@ -1,3 +1,6 @@
 class Form < Googletastic::TestModel
-  googletastic :form, :form_only => true, :action => /asdf/
+  googletastic :form,
+    :remote_id => :google_form_id,
+    :sync => :title,
+    :redirect_to => "/forms/:id"
 end

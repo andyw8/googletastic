@@ -1,10 +1,6 @@
 module Googletastic::Mixins::Attributes
   attr_accessor :attributes
   
-  def initialize(attributes = {})
-    self.attributes = attributes unless attributes.nil?
-  end
-  
   def attributes=(value)
     return if value.nil?
     attributes = value.dup

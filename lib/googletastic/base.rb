@@ -1,5 +1,33 @@
 class Googletastic::Base < Hash
   
+  include Googletastic::Mixins::Namespaces
+  include Googletastic::Mixins::Attributes
+  include Googletastic::Mixins::Requesting
+  include Googletastic::Mixins::Parsing
+  include Googletastic::Mixins::Finders
+  include Googletastic::Mixins::Actions
+  
+  attr_accessor :id
+  attr_accessor :acl
+  attr_accessor :attachment_path # for docs, images...
+  # classes/records it is synced with
+  attr_accessor :synced_with
+  
+  def synced_with
+    @synced_with ||= []
+    @synced_with
+  end
+  
+  def initialize(attributes = {})
+    return if attributes.nil?
+    if (attributes.has_key?(:parsed))
+      # haven't figured out how to do callbacks correctly
+      after_parse(attributes[:parsed])
+      attributes.delete(:parsed)
+    end
+    self.attributes = attributes 
+  end
+  
   class << self # Class methods
     
     # override if you name classes differently
@@ -7,82 +35,6 @@ class Googletastic::Base < Hash
       self.to_s.split("::").last
     end
     
-    def valid_queries
-      {
-        :limit => "max-result",
-        :offset => "start-index",
-        :start => "start-index",
-        :end => "end-index",
-        :categories => "category",
-        :with => "q"
-      }
-    end
   end
-  
-  attr_accessor :id, :acl
-  attr_accessor :attachment_path # for docs, images...
-  
-  def save
-    create_or_update
-  end
-  
-  def destroy
-    
-  end
-  
-  def clone
-    
-  end
-
-  def reload(options = nil)
-  end
-  
-  def new_record?
-    self.id.nil?
-  end
-  
-  def to_xml
-    self.class.marshall(self)
-  end
-  
-  def view_url
-  end
-  
-  def download_url(format = "pdf")
-  end
-  
-  def edit_url
-  end
-  
-  def has_attachment?
-    !self.attachment_path.nil?
-  end
-  
-  def mime_type
-    return "" if has_attachment?
-    return "" #TODO
-  end
-  
-  private
-    def create_or_update
-      result = new_record? ? create : update
-      result != false
-    end
-    
-    def create
-      if has_attachment?
-        self.class.client.post_file(self.class.feed_url, self.attachment_path, mime_type, self.to_xml)
-      else
-        self.class.client.post(self.class.feed_url, self.to_xml)
-      end
-    end
-    
-    def update(attribute_names = @attributes.keys)
-      if has_attachment?
-        self.class.client.put_file(self.class.feed_url, self.attachment_path, mime_type, self.to_xml)
-      else
-        self.class.client.put(self.edit_url || self.class.feed_url, self.to_xml)
-      end
-    end
   
 end

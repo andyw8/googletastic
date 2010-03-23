@@ -15,16 +15,19 @@ end
 
 APP_ROOT = File.dirname(__FILE__)
 
+# http://docs.rubygems.org/read/chapter/20
 spec = Gem::Specification.new do |s|
   s.name              = "googletastic"
+  s.author            = "Lance Pollard"
   s.version           = Googletastic::VERSION
   s.date              = "Mon Mar 22 20:12:47 -0700 2010"
   s.summary           = "More than Syncing Rails Apps with the Google Data API"
-  s.email             = "lancejpollard@gmail.com"
   s.homepage          = "http://github.com/viatropos/googletastic"
+  s.email             = "lancejpollard@gmail.com"
   s.description       = "Googletastic: A New Way of Googling"
   s.has_rdoc          = true
-  s.authors           = ["Lance Pollard"]
+  s.rubyforge_project = "googletastic"
+  s.platform          = Gem::Platform::RUBY
   s.files             = %w(README.textile Rakefile) + 
                           Dir["{googletastic,lib,spec}/**/*"] - 
                           Dir["spec/tmp"]
@@ -38,9 +41,22 @@ end
 
 desc "Create .gemspec file (useful for github)"
 task :gemspec do
-  filename = "#{spec.name}.gemspec"
-  File.open(filename, "w") do |f|
+  File.open("#{spec.name}.gemspec", "w") do |f|
     f.puts spec.to_ruby
+  end
+end
+
+desc "Build the gem into the current directory"
+task :gem => :gemspec do
+  `gem build #{spec.name}.gemspec`
+end
+
+desc "Print a list of the files to be put into the gem"
+task :manifest => :clean do
+  File.open("Manifest", "w") do |f|
+    spec.files.each do |file|
+      f.puts file
+    end
   end
 end
 
@@ -70,7 +86,7 @@ Rake::RDocTask.new do |rdoc|
   files = ["README.textile", "lib/**/*.rb"]
   rdoc.rdoc_files.add(files)
   rdoc.main = "README.textile"
-  rdoc.title = "Googletastic: A Ruby Gem"
+  rdoc.title = "Googletastic: A New Way of Googling"
 end
 
 desc "Run the rspec"
