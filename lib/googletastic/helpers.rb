@@ -9,7 +9,7 @@ module Googletastic::Helpers
     def googletastic(model, options = {})
       Googletastic.options_for(self, options)
       
-      include ("Googletastic::Helpers::#{model.to_s.camelize}").constantize
+      include ("Googletastic::Helpers::#{model.to_s.camelize}ModelHelper").constantize
     end
     
   end

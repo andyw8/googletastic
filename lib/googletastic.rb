@@ -42,8 +42,8 @@ module Googletastic
 
   def self.credentials
     return self.keys if self.keys
-
-    config_file = "#{APP_ROOT}/config/gdata.yml"
+    
+    config_file = "#{RAILS_ROOT}/config/gdata.yml"
     raise "Sorry, you must have #{config_file}" unless File.exists?(config_file)
     self.keys = YAML.load_file(config_file).symbolize_keys
   end

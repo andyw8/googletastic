@@ -23,8 +23,8 @@ describe Googletastic::Form do
     @form.respond_to?(:google_form).should == true
   end
   
-  it "should respond_to? dynamic class methods" do
-    # Form.respond_to?(:find_with_google_form).should == true
+  it "should respond_to?(:find_with_google_form) dynamic class methods" do
+    Form.respond_to?(:find_with_google_form).should == true
     pending
   end
 end

@@ -1,19 +1,19 @@
 # from http://github.com/mocra/custom_google_forms
 class Googletastic::Form < Googletastic::Base
   
-  attr_accessor :title, :body, :raw, :redirect_to
+  attr_accessor :title, :body, :raw, :redirect_to, :form_key
   
   def redirect_to=(value)
     self.class.add_redirect(raw, value)
   end
   
   def get
-    self.class.fetch_form_page(self.id)
+    self.class.find_by_api(:entryID => self.form_key)
   end
   
   class << self
     
-    attr_accessor :redirect_to
+    attr_accessor :redirect_to, :form_only
     
     def form_url(id)
       "http://spreadsheets.google.com/viewform?formkey=#{id}"
@@ -54,7 +54,12 @@ class Googletastic::Form < Googletastic::Base
       if self.redirect_to
         add_redirect(doc, self.redirect_to)
       end
-      doc.xpath("//form").first.unlink
+      if self.form_only
+        doc.xpath("//form").first.unlink
+      else
+        doc.xpath("//div[@class='ss-footer']").first.unlink
+        doc.xpath("//div[@class='ss-form-container']").first.unlink
+      end
     end
     
     def add_redirect(doc, value)

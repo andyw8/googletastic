@@ -1,4 +1,4 @@
-module Googletastic::Helpers::Document
+module Googletastic::Helpers::DocumentModelHelper
   
   def self.included(base)
     base.extend ClassMethods

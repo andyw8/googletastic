@@ -51,9 +51,17 @@ describe Googletastic::Document do
     end
   end
   
+  it "should post a document's content to google docs" do
+    
+  end
+  
+  it "should retrieve only the specified fields from the xml" do
+    puts Googletastic::Document.all(:fields => "title,id").to_xml
+  end
+  
   # DOWNLOADING
   it "should get document by 'kind'" do
-    
+    pending
   end
   
   it "should get a '.doc' file from google docs and return it as html" do

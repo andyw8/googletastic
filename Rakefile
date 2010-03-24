@@ -13,8 +13,8 @@ EOS
   exit(0)
 end
 
-APP_ROOT = File.dirname(__FILE__)
-
+APP_ROOT = defined?(RAILS_ROOT) ? RAILS_ROOT : File.dirname(__FILE__)
+RAILS_ROOT = File.dirname(__FILE__)
 # http://docs.rubygems.org/read/chapter/20
 spec = Gem::Specification.new do |s|
   s.name              = "googletastic"

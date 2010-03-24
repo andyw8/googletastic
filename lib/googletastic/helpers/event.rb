@@ -1,4 +1,4 @@
-module Googletastic::Helpers::Event
+module Googletastic::Helpers::EventModelHelper
   
   def self.included(base, &block)
     base.extend ClassMethods
