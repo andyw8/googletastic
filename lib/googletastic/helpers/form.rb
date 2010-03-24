@@ -29,7 +29,7 @@ module Googletastic::Helpers::FormModelHelper
       end
     end
     
-    Googletastic::Form.redirect_to = options[:redirect_to] if options.respond_to?(:redirect_to)
+    Googletastic::Form.redirect_to = options[:redirect_to] if options.has_key?(:redirect_to)
     Googletastic::Form.form_only = options[:form_only]
     
     # fast access
