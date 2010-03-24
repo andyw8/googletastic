@@ -16,12 +16,12 @@ module Googletastic::Mixins::Requesting
         :start => "start-index",
         :end => "end-index",
         :categories => "category",
-        :with => "q",
-        :only => "fields", # only the fields we want!
-        :fields => "fields"
+        :with => "q"
+#        :only => "fields", # only the fields we want!
+#        :fields => "fields"
       }
     end
-
+    
     def urlify(url, params = {})
       if params && !params.empty?
         query = params.collect do |k,v|
@@ -32,10 +32,6 @@ module Googletastic::Mixins::Requesting
       end
       url
     end
-    
-    def feed_url
-      raise "Override Me in Subclasses!"
-    end
 
     # helper method for google client
     def client(name = self.client_class)
@@ -43,7 +39,7 @@ module Googletastic::Mixins::Requesting
     end
     
     def build_url(options)
-      base = options.has_key?(:url) ? options[:url] : self.feed_url
+      base = options.has_key?(:url) ? options[:url] : self.index_url
       options[:url] = base
       urlify(base, extract_params(options))
     end
@@ -71,19 +67,11 @@ module Googletastic::Mixins::Requesting
   end
   
   module InstanceMethods
-    def view_url
-    end
-
-    def download_url(format = "pdf")
-    end
-
-    def edit_url
-    end
 
     def has_attachment?
       !self.attachment_path.nil?
     end
-
+    
     def mime_type
       return "" if has_attachment?
       return "" #TODO

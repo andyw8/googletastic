@@ -59,7 +59,7 @@ module Googletastic::Mixins::Finders
     
     def find_one(id, options)
       options[:id] = id
-      find_by_api(options)
+      find_by_api(options).first
     end
 
     def find_some(ids, options)
@@ -68,7 +68,6 @@ module Googletastic::Mixins::Finders
     
     def find_by_api(options)
       url = build_url(options)
-      puts "URL: #{url}"
       agent = options.has_key?(:client) ? options[:client] : client
       data = agent.get(url)
       return data if options.has_key?(:raw) and options[:raw] == true

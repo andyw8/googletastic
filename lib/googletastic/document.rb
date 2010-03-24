@@ -1,3 +1,5 @@
+# "Anonymous modules have no name to be referenced by"
+#   If you have a class constant that's undefined
 class Googletastic::Document < Googletastic::Base
   
   ID = "https://docs.google.com/feeds/default/private/full/"
@@ -23,39 +25,7 @@ class Googletastic::Document < Googletastic::Base
   PPT = "application/vnd.ms-powerpoint" unless defined?(PPT)
   PPS = "application/vnd.ms-powerpoint" unless defined?(PPS)
   
-  attr_accessor :title, :kind, :categories
-  
-  def view_url
-    "http://docs.google.com/View?docID=#{id}&revision=_latest"
-  end
-  
-  def update_url
-    if has_attachment?
-      "http://docs.google.com/feeds/media/private/full/#{self.id}"
-    else
-      "http://docs.google.com/feeds/documents/private/full/#{self.id}"
-    end
-  end
-  
-  def download_url(format = "pdf")
-    "#{FEED_BASE}/download/documents/Export?docID=#{id}&exportFormat=#{format}"
-  end
-  
-  def edit_url
-    "#{BASE_URL}/Doc?docid=#{id}"
-  end
-  
-  def self.spreadsheet_url
-    "#{FEED_BASE}/default/private/full/-/spreadsheet"
-  end
-  
-  def self.feed_url
-    "#{FEED}"
-  end
-  
-  def download(format = "pdf")
-    self.class.first(:url => download_url(format))
-  end
+  attr_accessor :title, :kind, :categories, :resource_id
   
   def has_access?(email)
     self.class.first(:url => update_url)
@@ -64,7 +34,7 @@ class Googletastic::Document < Googletastic::Base
   attr_reader :body
   def body
     return @body if @body
-    @body = client.get(self.view_url).to_xml
+    @body = client.get(self.show_url).to_xml
   end
   
   attr_reader :content
@@ -97,7 +67,10 @@ class Googletastic::Document < Googletastic::Base
   
   # Time.now.xmlschema
   class << self
-    VALID_CATEGORIES = /^(document|spreadsheet|folder|presentation|pdf|form)$/ unless defined?(VALID_CATEGORIES)
+    
+    def client_class
+      "DocList"
+    end
     
     def valid_queries
       {
@@ -116,28 +89,72 @@ class Googletastic::Document < Googletastic::Base
         :translate_to => "targetLanguage",
         :language => "sourceLanguage",
         :permanent_delete => "delete",
-        :convert => "convert"
+        :convert => "convert",
+        :format => "exportFormat"
       }.merge(super)
     end
     
-    def spreadsheets
-      self.all(:url => "#{self.feed_url}/-/spreadsheet")
+    def valid_category?(value)
+      %w(document spreadsheet folder presentation pdf form).include?(value)
     end
     
-    def client_class
-      "DocList"
+    def index_url(ids = nil)
+      "http://docs.google.com/feeds/documents/private/full"
+    end
+    
+    # docid (all lowercase)
+    def show_url(id)
+      "http://docs.google.com/View?docID=#{id}&revision=_latest"
+    end
+    
+    def get_url(id)
+      "https://docs.google.com/feeds/default/private/full/#{id}"
+    end
+    
+    def edit_url(id)
+      "http://docs.google.com/Doc?docid=#{id}"
+    end
+    
+    def update_url(id)
+      if has_attachment?
+        "http://docs.google.com/feeds/media/private/full/#{self.id}"
+      else
+        "http://docs.google.com/feeds/documents/private/full/#{self.id}"
+      end
+    end
+
+    # docId (camelcase)
+    def download_url(id)
+      "http://docs.google.com/feeds/download/documents/Export?docId=#{id}"
+    end
+    
+    def upload_url(id = nil)
+      index_url(id)
+    end
+    
+    %w(document spreadsheet folder presentation pdf form).each do |category|
+      define_method category do
+        all(:url => "#{index_url}/-/#{category}")
+      end
+    end
+    
+    def download(*args)
+      old_options = args.extract_options!
+      options = {}
+      options[:format] = old_options[:format] || "pdf"
+      options[:url] = download_url(args.first.is_a?(String) ? args.first : old_options[:id])
+      args << options
+      find(*args)
+    end
+    
+    def upload(*args)
+      client.post_file(upload_url, args.first, TXT)
     end
     
     def build_url(options)
-      base = options.has_key?(:url) ? options[:url] : self.feed_url
-      if options.has_key?(:include)
-        if options[:include].index(:acl)
-          base.gsub!(/full$/, "expandAcl")
-        end
-      end
-      if options.has_key?(:id)
-        base << "/#{options[:id]}"
-      end
+      base = options.has_key?(:url) ? options[:url] : self.index_url
+      base.gsub!(/full$/, "expandAcl") if options.has_key?(:include) and options[:include].index(:acl)
+      base << "/#{options[:id]}" if options.has_key?(:id)
       options[:url] = base
       super(options)
     end
@@ -146,20 +163,20 @@ class Googletastic::Document < Googletastic::Base
       records = xml.xpath("//atom:entry", ns_tag("atom")).collect do |record|
         kind = title = id = categories = value = nil # reset
         title       = record.xpath("atom:title", ns_tag("atom")).text
-        id          = record.xpath("gd:resourceId", ns_tag("gd")).text
-        categories  = []
-        record.xpath("atom:category", ns_tag("atom")).each do |category|
+        categories  = record.xpath("atom:category", ns_tag("atom")).collect do |category|
           value = category["label"].to_s
-          categories << value
-          if !kind and value =~ VALID_CATEGORIES
-            kind = $1
-          end
+          kind = value if !kind and valid_category?(value)
+          value
         end
+        resource_id = record.xpath("gd:resourceId", ns_tag("gd")).text
+        id          = resource_id.gsub(/#{kind}:/, "")
+                
         Googletastic::Document.new(
           :id => id,
           :title => title,
           :categories => categories,
-          :kind => kind
+          :kind => kind,
+          :resource_id => resource_id
         )
       end
       records
@@ -170,7 +187,7 @@ class Googletastic::Document < Googletastic::Base
         xml.entry(ns_xml("atom", "exif", "media", "gphoto", "openSearch")) {
           if record.id
             xml.id_ {
-              xml.text "#{Googletastic::Document::ID}#{record.id}"
+              xml.text get_url(record.resource_id)
             }
           end
           record.categories.each do |category|

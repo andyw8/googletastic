@@ -14,17 +14,21 @@ class Googletastic::Event < Googletastic::Base
   end  
     
   def edit_url
-    "http://www.google.com/calendar/feeds/default/private/full/#{self.id.split("/").last}"
+    self.class.edit_url(self.id)
   end
   
   class << self
     
-    def feed_url
+    def client_class
+      "Calendar"
+    end
+    
+    def index_url
       "http://www.google.com/calendar/feeds/default/private/full"
     end
     
-    def client_class
-      "Calendar"
+    def edit_url(id)
+      "http://www.google.com/calendar/feeds/default/private/full/#{id}"
     end
     
     # http://code.google.com/apis/calendar/data/2.0/reference.html#Parameters
@@ -50,16 +54,9 @@ class Googletastic::Event < Googletastic::Base
       %w(ascending descending).include?(value)
     end
     
-    def build_url(options)
-      base = options.has_key?(:url) ? options[:url] : self.feed_url
-      options[:url] = base
-      super(options)
-    end
-    
     def unmarshall(xml)
-
       records = xml.xpath("//atom:entry", ns_tag("atom")).collect do |record|
-        id          = record.xpath("atom:id", ns_tag("atom")).first.text
+        id          = record.xpath("atom:id", ns_tag("atom")).first.text.split("/").last
         title       = record.xpath("atom:title", ns_tag("atom")).first.text
         description = record.xpath("atom:content", ns_tag("atom")).first.text
         created_at  = record.xpath("atom:published", ns_tag("atom")).first.text

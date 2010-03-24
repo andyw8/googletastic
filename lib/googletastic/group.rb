@@ -4,7 +4,7 @@ class Googletastic::Group < Googletastic::Base
   
   class << self
     
-    def feed_url
+    def index_url
       "http://www.google.com/m8/feeds/groups/default/full"
     end
     

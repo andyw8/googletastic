@@ -6,14 +6,8 @@ class Googletastic::Album < Googletastic::Base
       "Photos"
     end
     
-    def feed_url
+    def index_url
       "http://picasaweb.google.com/data/feed/api/user/default"
-    end
-    
-    def build_url(options)
-      base = options.has_key?(:url) ? options[:url] : self.feed_url
-      options[:url] = base
-      super(options)
     end
     
     def unmarshall(xml)

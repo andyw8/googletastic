@@ -18,15 +18,16 @@ module Googletastic::Helpers::FormModelHelper
     options[:form_key] ||= "form_key"
     options[:form_only] = false unless options.has_key?(:form_only)
     if options.has_key?(:sync)
-      if options[:sync].is_a?(Symbol)
-        options[:sync] == {options[:sync] => options[:sync]}
-      elsif options[:sync].is_a?(String)
-        options[:sync] = {options[:sync].to_sym => options[:sync].to_sym}
-      elsif options[:sync].is_a?(Array)
-        options[:sync] = options[:sync].collect { |v| {v.to_sym => v.to_sym} }
-      else
-        options[:sync].symbolize_keys!
-      end
+      options[:sync] = case options[:sync].class.to_s
+        when "Symbol"
+          {options[:sync] => options[:sync]}
+        when "String"
+          {options[:sync].to_sym => options[:sync].to_sym}
+        when "Array"
+          options[:sync].collect { |v| {v.to_sym => v.to_sym} }
+        else
+          options[:sync].symbolize_keys
+        end
     end
     
     Googletastic::Form.redirect_to = options[:redirect_to] if options.has_key?(:redirect_to)

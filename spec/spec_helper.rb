@@ -25,3 +25,5 @@ Googletastic.keys = {
   :youtube_login => "MrFlexinstyle",
   :youtube_dev_key => "AI39si7jkhs_ECjF4unOQz8gpWGSKXgq0KJpm8wywkvBSw4s8oJd5p5vkpvURHBNh-hiYJtoKwQqSfot7KoCkeCE32rNcZqMxA"
 }
+
+NS              = Googletastic::Mixins::Namespaces::NAMESPACES

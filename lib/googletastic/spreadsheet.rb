@@ -1,10 +1,5 @@
 class Googletastic::Spreadsheet < Googletastic::Base
   
-  def self.feed_url
-    "http://spreadsheets.google.com/feeds/spreadsheets/private/full"
-  end
-  
-  
   attr_accessor :title, :content
   
   # Time.now.xmlschema
@@ -14,6 +9,10 @@ class Googletastic::Spreadsheet < Googletastic::Base
       "Spreadsheets"
     end
     
+    def index_url
+      "http://spreadsheets.google.com/feeds/spreadsheets/private/full"
+    end
+
     def unmarshall(xml)
       records = xml.xpath("//atom:entry", ns_tag("atom")).collect do |record|
         id          = record.xpath("atom:id", ns_tag("atom")).first.text.gsub("http://spreadsheets.google.com/feeds/spreadsheets/", "")

@@ -3,13 +3,22 @@ class Googletastic::Form < Googletastic::Base
   
   attr_accessor :title, :body, :raw, :redirect_to, :form_key
   
-  def redirect_to=(value)
-    self.class.add_redirect(raw, value)
+  def submit_url(key = nil)
+    self.class.submit_url(key || self.id)
   end
   
-  def get(redirect = nil)
+  def submit(form_key, params)
+    action = submit_url(form_key)
+    uri = URI.parse(action)
+    req = Net::HTTP::Post.new("#{uri.path}?#{uri.query}")
+    req.form_data = params
+    response = Net::HTTP.new(uri.host).start {|h| h.request(req)}
+    response
+  end
+  
+  def get(options = {})
     old_redirect =  self.class.redirect_to
-    self.class.redirect_to = redirect if redirect
+    self.class.redirect_to = options if options
     new_record = self.class.find_by_api(:entryID => self.form_key)
     self.class.redirect_to = old_redirect
     if new_record and new_record.is_a?(Googletastic::Form)
@@ -19,8 +28,8 @@ class Googletastic::Form < Googletastic::Base
     self.body
   end
   
-  def body
-    @body ||= get
+  def body(options = {})
+    @body ||= get(options)
     @body
   end
   
@@ -28,12 +37,12 @@ class Googletastic::Form < Googletastic::Base
     
     attr_accessor :redirect_to, :form_only
     
-    def form_url(id)
-      "http://spreadsheets.google.com/viewform?formkey=#{id}"
+    def submit_url(id = "")
+      "http://spreadsheets.google.com/formResponse?formkey=#{id}"
     end
     
-    def submit_to(id = "")
-      "http://spreadsheets.google.com/formResponse?formkey=#{id}"
+    def show_url(id)
+      "http://spreadsheets.google.com/viewform?formkey=#{id}"
     end
     
     def all(*args)
@@ -42,12 +51,12 @@ class Googletastic::Form < Googletastic::Base
     
     # there is no form api :/
     def find_by_api(options)
-      record = fetch_form_page(options[:entryID])
+      record = fetch(options[:entryID])
     end
     
     def unmarshall(html)
       action = html.xpath("//form").first["action"].to_s
-      id = action.gsub(self.submit_to, "")
+      id = action.gsub(self.submit_url, "")
       title = html.xpath("//h1[@class='ss-form-title']").first.text
       body = content(html, id)
       form = Googletastic::Form.new(
@@ -61,22 +70,22 @@ class Googletastic::Form < Googletastic::Base
       return record.inspect
     end
     
-    def fetch_form_page(id)
+    def fetch(id)
       uri = URI.parse(form_url(id))
       req = Net::HTTP::Get.new("#{uri.path}?#{uri.query}")
       response = Net::HTTP.new(uri.host).start {|h| h.request(req)}
       return response.is_a?(Net::HTTPSuccess) ? unmarshall(Nokogiri::HTML(response.body)) : response
     end
     
-    def content(doc, submit_key)
+    def content(html, submit_key)
       if self.redirect_to
-        add_redirect(doc, self.redirect_to, submit_key)
+        add_redirect(html, self.redirect_to, submit_key)
       end
       if self.form_only
-        doc.xpath("//form").first.unlink
+        html.xpath("//form").first.unlink
       else
-        doc.xpath("//div[@class='ss-footer']").first.unlink
-        doc.xpath("//div[@class='ss-form-container']").first.unlink
+        html.xpath("//div[@class='ss-footer']").first.unlink
+        html.xpath("//div[@class='ss-form-container']").first.unlink
       end
     end
     
@@ -116,24 +125,5 @@ class Googletastic::Form < Googletastic::Base
       form
     end
     
-  end
-  
-  def redirect=(value)
-    self.body = self.class.add_redirect(Nokogiri::HTML(body), value).to_html
-    value
-  end
-  
-  def submit(form_key, params)
-    google_form_action = self.class.submit_to(form_key)
-    puts "SUBMIT TO GOOGLE: #{google_form_action.to_s}"
-    uri = URI.parse(google_form_action)
-    req = Net::HTTP::Post.new("#{uri.path}?#{uri.query}")
-    req.form_data = params
-    response = Net::HTTP.new(uri.host).start {|h| h.request(req)}
-    response
-  end
-  
-  def view_url
-    "http://spreadsheets.google.com/viewform?formkey=#{id}"
   end
 end

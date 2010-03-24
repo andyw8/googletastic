@@ -3,22 +3,14 @@ class Googletastic::Calendar < Googletastic::Base
   attr_accessor :created_at, :updated_at, :title, :role
   attr_accessor :color, :hidden, :selected, :timezone
   
-  # to view calendar in raw html
-  def view_url
-    src = self.id.gsub("http://www.google.com/calendar/feeds/default/calendars/", "")
-    "http://www.google.com/calendar/embed?src=#{src}&ctz=#{self.timezone}"
-  end
-  
   class << self
     
-    def feed_url
+    def index_url
       "http://www.google.com/calendar/feeds/default/allcalendars/full"
     end
     
-    def build_url(options)
-      base = options.has_key?(:url) ? options[:url] : self.feed_url
-      options[:url] = base
-      super(options)
+    def show_url(id)
+      "http://www.google.com/calendar/embed?src=#{id}"
     end
     
     def unmarshall(xml)

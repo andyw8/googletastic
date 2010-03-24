@@ -34,12 +34,12 @@ class Googletastic::Image < Googletastic::Base
       "Photos"
     end
     
-    def feed_url
+    def index_url
       "http://picasaweb.google.com/data/feed/api/user/#{Googletastic.credentials[:username]}"
     end
     
     def build_url(options)
-      base = options.has_key?(:url) ? options[:url] : self.feed_url
+      base = options.has_key?(:url) ? options[:url] : self.index_url
       options[:url] = base
       options[:kind] = "photo" unless options.has_key?(:kind)
       options[:access] ||= "all"
@@ -50,7 +50,6 @@ class Googletastic::Image < Googletastic::Base
     def unmarshall(xml)
       records = xml.xpath("//atom:entry", ns_tag("atom")).collect do |record|
         # thumbnails
-
         thumbnails = record.xpath("media:group/media:thumbnail").collect do |thumbnail|
           url     = thumbnail["url"]
           width   = thumbnail["width"].to_i
@@ -107,7 +106,7 @@ class Googletastic::Image < Googletastic::Base
         xml.entry('xmlns' => Googletastic::ATOM_NS, 'xmlns:docs' => ns("docs")) {
           if record.id
             xml.id {
-              xml.text "#{ID}#{record.id}"
+              xml.text show_url(record.id)
             }
           end
           xml.title {

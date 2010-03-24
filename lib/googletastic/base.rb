@@ -7,6 +7,10 @@ class Googletastic::Base < Hash
   include Googletastic::Mixins::Finders
   include Googletastic::Mixins::Actions
   
+  # ID's are specifically the hash key for each entry.
+  # They don't include the url for finding the document,
+  # which can be inferred from the "action" you're taking on it,
+  # and the general api.
   attr_accessor :id
   attr_accessor :acl
   attr_accessor :attachment_path # for docs, images...
@@ -19,18 +23,14 @@ class Googletastic::Base < Hash
   end
   
   def initialize(attributes = {})
-    return if attributes.nil?
-    if (attributes.has_key?(:parsed))
-      # haven't figured out how to do callbacks correctly
-      after_parse(attributes[:parsed])
-      attributes.delete(:parsed)
-    end
-    self.attributes = attributes 
+    self.attributes = attributes unless attributes.nil?
   end
   
   class << self # Class methods
     
-    # override if you name classes differently
+    # This is referring to the gdata gem's implementation,
+    # which more closely maps to the google api
+    # override if you name classes differently.
     def client_class
       self.to_s.split("::").last
     end
