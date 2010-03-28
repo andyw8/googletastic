@@ -13,8 +13,13 @@ EOS
   exit(0)
 end
 
+def files(path, from = __FILE__, &block)
+  Dir.glob(File.join(File.dirname(from), path)) {|file| yield file}
+end
+
 APP_ROOT = defined?(RAILS_ROOT) ? RAILS_ROOT : File.dirname(__FILE__)
 RAILS_ROOT = File.dirname(__FILE__)
+
 # http://docs.rubygems.org/read/chapter/20
 spec = Gem::Specification.new do |s|
   s.name              = "googletastic"
@@ -91,3 +96,8 @@ end
 
 desc "Run the rspec"
 task :default => :spec
+
+desc "Run Googletastic Benchmarks"
+task :benchmark do
+  files("spec/benchmarks/*") {|file| system("ruby #{file}") }
+end

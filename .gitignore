@@ -4,3 +4,4 @@ doc/**/*
 *.tgz
 *.gem
 *.result
+*.yml

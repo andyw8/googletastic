@@ -16,6 +16,7 @@ class Googletastic::Base < Hash
   attr_accessor :attachment_path # for docs, images...
   # classes/records it is synced with
   attr_accessor :synced_with
+  attr_accessor :response
   
   def synced_with
     @synced_with ||= []

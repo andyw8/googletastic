@@ -71,7 +71,7 @@ module Googletastic::Mixins::Finders
       agent = options.has_key?(:client) ? options[:client] : client
       data = agent.get(url)
       return data if options.has_key?(:raw) and options[:raw] == true
-      records = unmarshall(data.to_xml)
+      records = unmarshall(Nokogiri::XML(data.body)).collect {|r| r.response = data; r}
     end
   end
   

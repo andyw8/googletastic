@@ -72,6 +72,10 @@ module Googletastic::Mixins::Requesting
       !self.attachment_path.nil?
     end
     
+    def client
+      self.class.client
+    end
+    
     def mime_type
       return "" if has_attachment?
       return "" #TODO

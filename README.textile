@@ -15,3 +15,31 @@ git clone git@github.com:viatropos/googletastic.git
 cd googletastic
 rake install
 </code></pre>
+
+h2. Authentication
+
+Google's API's have "two types of accounts"http://code.google.com/apis/accounts/docs/AuthForInstalledApps.html#Request:
+
+# Regular (for individuals): "GOOGLE"
+# Hosted (for Google Apps): "HOSTED" (or "HOSTED_OR_GOOGLE")
+
+Google's APIs have "3 types of authentication":http://code.google.com/apis/accounts/index.html:
+
+# "ClientLogin":http://code.google.com/apis/accounts/docs/AuthForInstalledApps.html: For single users
+# "OpenAuth":http://code.google.com/apis/accounts/docs/OAuth.html: For "registering an app":http://code.google.com/apis/accounts/docs/RegistrationForWebAppsAuto.html to automatically login.  You need to "register your domain here":https://www.google.com/accounts/ManageDomains
+# "AuthSub":http://code.google.com/apis/accounts/docs/AuthSub.html
+
+You can permanently unlock the CAPTCHA for a computer by going "here":https://www.google.com/a/accd.org/UnlockCaptcha.
+
+If this is for Google Apps, you must go to Google Docs Settings in the Admin Panel, and make sure this is selected: "Users can share documents outside this domain, but will receive a warning each time".  The most restrictive, "Users cannot share documents outside this domain", won't allow you to view documents at all.  Also, don't select "Require mydomain.com sign-in to view this form." for google forms.
+
+h2. Top 10 Things I Need the Google Data API to Have
+
+"Submit Your Ideas to Google!!!":http://productideas.appspot.com/#15/e=220cb&t=2192a&f=22150
+
+# Partial Responses for everything.
+	So we can get only the data we need.  This way we can poll our google docs for any changes and run processes on them.
+# Publish the docs as plain text.
+# Textile and Markdown support
+# Better font support in PDF documents
+# Everything Should Be TAGGABLE

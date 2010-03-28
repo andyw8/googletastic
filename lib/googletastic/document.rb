@@ -34,7 +34,7 @@ class Googletastic::Document < Googletastic::Base
   attr_reader :body
   def body
     return @body if @body
-    @body = client.get(self.show_url).to_xml
+    @body = Nokogiri::XML(client.get(self.view_url).body)
   end
   
   attr_reader :content
@@ -58,6 +58,14 @@ class Googletastic::Document < Googletastic::Base
   # returns the styles for the document, in case you need them
   def styles
     
+  end
+  
+  def view
+    client.get(self.show_url)
+  end
+  
+  def download(format = "pdf")
+    client.get(self.download_url + "&exportFormat=#{format}")
   end
   
   def new_record?
@@ -184,17 +192,17 @@ class Googletastic::Document < Googletastic::Base
     
     def marshall(record)
       Nokogiri::XML::Builder.new { |xml| 
-        xml.entry(ns_xml("atom", "exif", "media", "gphoto", "openSearch")) {
+        xml.entry(ns_xml("atom", "exif", "openSearch")) {
           if record.id
             xml.id_ {
               xml.text get_url(record.resource_id)
             }
           end
           record.categories.each do |category|
-#            xml.category(
-#              :scheme => "http://schemas.google.com/g/2005#kind",
-#              :term => "#{DOCS_NS}##{category}"
-#            )
+            xml.category(
+              :scheme => "http://schemas.google.com/g/2005#kind",
+              :term => "#{category}"
+            )
           end
           xml.title {
             xml.text record.title

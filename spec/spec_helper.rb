@@ -5,6 +5,7 @@ rescue LoadError
   gem 'rspec'
   require 'spec'
 end
+require 'benchmark'
 
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 require 'googletastic'
@@ -19,11 +20,6 @@ require 'test_model'
 Googletastic::TestModel.send(:include, Googletastic::Helpers)
 Dir.glob("#{MODELS_DIR}/*") {|file| require file}
 
-Googletastic.keys = {
-  :username => "flexinstyle@gmail.com",
-  :password => "flexyflexy",
-  :youtube_login => "MrFlexinstyle",
-  :youtube_dev_key => "AI39si7jkhs_ECjF4unOQz8gpWGSKXgq0KJpm8wywkvBSw4s8oJd5p5vkpvURHBNh-hiYJtoKwQqSfot7KoCkeCE32rNcZqMxA"
-}
+Googletastic.keys = YAML.load_file("spec/config.yml").symbolize_keys
 
 NS              = Googletastic::Mixins::Namespaces::NAMESPACES

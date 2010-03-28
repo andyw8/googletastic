@@ -2,12 +2,15 @@ require 'rubygems'
 require 'rake'
 require 'rake/clean'
 #require 'rbconfig'
+require 'open-uri'
 require 'nokogiri'
 require 'active_support'
 require 'active_record'
 require 'gdata'
+require 'liquid'
 
 GOOGLETASTIC_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(GOOGLETASTIC_ROOT)
+RAILS_ROOT = GOOGLETASTIC_ROOT
 
 class Module
   def include_class_and_instance_modules
@@ -52,8 +55,8 @@ module Googletastic
     self.clients ||= {}
     model = model.to_sym
     return self.clients[model] if self.clients.has_key?(model)
-	  client = ("GData::Client::#{model.to_s.camelize}").constantize.new
-	  client.clientlogin(credentials[:username], credentials[:password])
+	  client = ("GData::Client::#{model.to_s.camelize}").constantize.new(:source => credentials[:application])
+	  client.clientlogin(credentials[:username], credentials[:password], nil, nil, nil, credentials[:account_type])	  
 	  self.clients[model] = client
   end
   

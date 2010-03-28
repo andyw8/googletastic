@@ -5,6 +5,7 @@ describe Googletastic::Document do
   
   before(:all) do
     @doc = Document.new
+    @id = "0AT1-fvkm5vJPZGN2NzR3bmJfMGZiMnh3N2R0"
   end
   
   # FIND METHODS
@@ -12,21 +13,21 @@ describe Googletastic::Document do
     it "should find first document from google docs" do
       doc = Googletastic::Document.first
       doc.should_not == nil
+      doc.title.should_not be_empty
     end
-  
+    
     it "should find all documents from google docs, and they should be an array" do
       docs = Googletastic::Document.all
       docs.should_not == nil
       docs.class.to_s.should == "Array"
     end
-  
+    
     it "should find single document by id from google docs" do
-      doc_id = "0AT1-fvkm5vJPZGN2NzR3bmJfNmN2ampwdmNo"
-      doc = Googletastic::Document.find(doc_id)
+      doc = Googletastic::Document.find(@id)
       doc.should_not == nil
-      doc.id.should == doc_id
+      doc.id.should == @id
     end
-  
+    
     it "should find single document by id from google docs, with ACL via ':include => [:acl]'" do
       pending
     end
@@ -37,12 +38,20 @@ describe Googletastic::Document do
     end
 
     it "should retrieve only the specified fields from the xml" do
+#      result = Googletastic::Document.all(:fields => "title,id", :raw => true)
+#      puts Nokogiri::XML(result.body).to_xml
       pending
-  #    puts Googletastic::Document.all(:fields => "title,id").to_xml
     end
     
     it "should get document by 'kind' of 'spreadsheet'" do
+#      Googletastic::Document.first(:kind => "spreadsheet")
       pending
+    end
+    
+    describe "errors" do
+      it "should throw an error if you don't pass 'find' any parameters" do
+#        Googletastic::Document.find.should raise_error
+      end
     end
   end
   
@@ -83,14 +92,28 @@ describe Googletastic::Document do
     
     it "should marshall the document into an entry feed with at least a 'title' and 'id'" do
       xml = Nokogiri::XML(@xml)
-      xml.xpath("//atom:id", {"atom" => NS['atom']}).first.text.should == "#{@doc.get_url}/#{@doc.resource_id}"
+      xml.xpath("//atom:id", {"atom" => NS['atom']}).first.text.should == "#{@doc.index_url.gsub('http', 'https').gsub('documents', 'default')}/#{@doc.resource_id}"
       xml.xpath("//atom:title", {"atom" => NS['atom']}).first.text.should == @doc.title
     end
   end
   
   describe "viewing" do
     it "should pull the raw html content of the document down" do
-      
+      doc = Googletastic::Document.find(@id)
+      view = doc.view
+      liquid = Liquid::Template.parse(view.to_xml.to_xml)
+      result = liquid.render("company_name" => "My Company")
+    end
+    
+    it "should return a 'Content Not Modified' response" do
+      client = Googletastic::Document.client
+      since = '2010-03-28T22:51:51.488Z'
+      good = '2009-11-04T10:57:00-08:00'
+      # AkQFRnw7fCp7ImA9WxBaGEw.
+      client.headers["If-Modified-Since"] = since
+      url = Googletastic::Document.index_url + "?updated-max=#{good}"
+      puts "URL: #{url}"
+      puts client.get(url).to_xml.to_xml
     end
   end
   
@@ -108,11 +131,11 @@ describe Googletastic::Document do
   # DOWNLOADING
   describe "downloading" do
     it "should download a document as plain text" do
-#      doc = Googletastic::Document.download("0AT1-fvkm5vJPZGN2NzR3bmJfMTlkNHRjZHpnNg", :format => "pdf")
-#      doc.should_not == nil
-      pending
+      doc = Googletastic::Document.find(@id)
+      result = doc.download("txt")
+      result.should_not == nil
     end
-
+    
     it "should get a '.doc' file from google docs and return it as html" do
       pending
     end

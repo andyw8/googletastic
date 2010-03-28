@@ -33,6 +33,17 @@ describe Googletastic::Base do
     it "should successfully authenticate" do
       pending
     end
+    
+  end
+  
+  # http://code.google.com/apis/gdata/articles/gdata_on_rails.html#AuthSub
+  it "should login via 'AuthSub'" do
+    client = GData::Client::DocList.new
+    next_url = 'http://accd.org'
+    secure = false  # set secure = true for signed AuthSub requests
+    sess = true
+    domain = nil#'accd.org'  # force users to login to a Google Apps hosted domain
+    authsub_link = client.authsub_url(next_url, secure, sess, domain)
   end
   
 end
