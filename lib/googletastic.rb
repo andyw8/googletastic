@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'rake'
+require 'date'
 require 'rake/clean'
 #require 'rbconfig'
 require 'open-uri'
@@ -10,7 +11,6 @@ require 'gdata'
 require 'liquid'
 
 GOOGLETASTIC_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(GOOGLETASTIC_ROOT)
-RAILS_ROOT = GOOGLETASTIC_ROOT
 
 class Module
   def include_class_and_instance_modules
@@ -30,7 +30,7 @@ def require_local(path, from = __FILE__)
 end
 
 def files(path, from = __FILE__, &block)
-  Dir.glob(File.join(File.dirname(from), path)) {|file| yield file}
+  Dir.glob(File.expand_path(File.join(File.dirname(from), path))) {|file| yield file}
 end
 
 def require_spec
@@ -79,6 +79,8 @@ module Googletastic
 end
 
 # main includes
+require_local "googletastic/ext/*"
+
 require File.dirname(__FILE__) + '/googletastic/mixins'
 require File.dirname(__FILE__) + '/googletastic/base'
 

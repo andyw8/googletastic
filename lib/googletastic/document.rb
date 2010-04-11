@@ -25,7 +25,7 @@ class Googletastic::Document < Googletastic::Base
   PPT = "application/vnd.ms-powerpoint" unless defined?(PPT)
   PPS = "application/vnd.ms-powerpoint" unless defined?(PPS)
   
-  attr_accessor :title, :kind, :categories, :resource_id
+  attr_accessor :title, :kind, :categories, :resource_id, :ext
   
   def has_access?(email)
     self.class.first(:url => update_url)
@@ -34,7 +34,7 @@ class Googletastic::Document < Googletastic::Base
   attr_reader :body
   def body
     return @body if @body
-    @body = Nokogiri::XML(client.get(self.view_url).body)
+    @body = Nokogiri::XML(view.body)
   end
   
   attr_reader :content
@@ -178,13 +178,18 @@ class Googletastic::Document < Googletastic::Base
         end
         resource_id = record.xpath("gd:resourceId", ns_tag("gd")).text
         id          = resource_id.gsub(/#{kind}:/, "")
-                
+        created_at  = record.xpath("atom:published", ns_tag("atom")).text
+        updated_at  = record.xpath("atom:updated", ns_tag("atom")).text
+        puts "UPDATED AT: #{updated_at.inspect}"
         Googletastic::Document.new(
           :id => id,
           :title => title,
           :categories => categories,
           :kind => kind,
-          :resource_id => resource_id
+          :resource_id => resource_id,
+          :ext => File.extname(title),
+          :created_at => DateTime.parse(created_at),
+          :updated_at => DateTime.parse(updated_at)
         )
       end
       records

@@ -13,6 +13,7 @@ class Googletastic::Base < Hash
   # and the general api.
   attr_accessor :id
   attr_accessor :acl
+  attr_accessor :created_at, :updated_at
   attr_accessor :attachment_path # for docs, images...
   # classes/records it is synced with
   attr_accessor :synced_with

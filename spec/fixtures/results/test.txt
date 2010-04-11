@@ -1,0 +1,185 @@
+﻿In the Spirit of Agileness... 
+The Evolving Requirements List of My Company 
+This is going to be a copy-paste of my notes on what needs to happen to make My Company a success.  It will be sloppy, it will be raw, it will be repetitive, but it will be there.  As we work on the different parts of the system, new things unfold.  We find tiny things that differ between browser, edge cases that weren't immediately apparent but that take 2 weeks to work through, and better ways of doing things to outdo the competition.
+
+
+Date: 3/28/10 
+- Integrate OAuth from the Google API so any user registered with My Company can access forms and documents via the website. 
+- CAREFUL - if you check any of the boxes at the top when creating a form, an error will be thrown on the website, because of authentication (why we need OAuth). 
+- Integrated another Auth mechanism :).  Done with that. 
+- Liquid Templates.  Now we need to define variables you guys would like to use in your documents. 
+- Then we need to build an optimized renderer that can cache the rendered templates as files.  This greatly reduces the load time of the website, as the documents are already processed into their final form.  Working on this now. 
+Date: 3/25/10 
+- Better "Authorization Failure" page when you try to login into a restricted place and don't have access. 
+- Configurable redirect path when you logout (what screen does it take you to). 
+Date: 3/23/10 
+- Updated admin event system so tickets, attendees, and forms are on sub tabs so we can use them without javascript so IE doesn't cry. 
+- Integrated google forms and google docs into admin panel. 
+
+Tomorrow (in a few hours): 
+- Redefine registration process so it can work without javascript 
+- Setup Test payments with My Companys Merchant account on Paypal Pro 
+- Build Checking view 
+
+later: 
+- optimize xml data transfer between google apis so we only get what we need, b/c right now it requires a lot of processing which might slow the website down. 
+- build micro app/api to ping google to see what content has changed, so we can cache the rendered documents locally. 
+- Liquid templating language so we can define basic variables in documents (like names and dates), so we don't have to have multiple versions of the document with minor changes.
+
+Date: 3/22/10 
+Paypal Recurrent Billing Guide. 
+Paypal Website Payments Pro Costs 
+Paypal Pro vs. Standard 
+Date: 3/21/10 
+- Store images on Picasa for free, up to 1GB.  Not important to have the raw image file directly SEO'd.  Will help dramatically speed up site load time since google is hosting larger assets (can host videos too). 
+- Building workflow engine.  "WorkItem" defines a set of sequential states, each state which can have multiple tasks executed.  The first WorkItem being modeled is the post-registration workflow: 
+    - Payment Received for Registration, marked as correct.  Starts workflow, creates "task list" on admin panel, or adds to list: 
+    - My CompanyBot - Send confirmation and thank you email
+
+    - Send email to admin saying they need to schedule a conference call, with conference call details
+
+    - "Conference Call Task" is assigned to someone in My Company
+
+    - Once conference call is marked as complete, next item executes: Send forms? wait two business days...
+
+    - (the specifics can be fleshed out once we get the basics going).
+
+
+TODO for the meeting on Thursday: 
+
+- Update My Company Paypal Account to be Paypal Pro 
+- Transfer the registration form into Google Docs 
+- Register for the Google Apps Premier Account 
+- Get rid of security page 
+- Test Paypal and Check payments for perfection 
+Date: 3/20/10 
+Payments 
+Been getting a firm grasp on how Merchant accounts work with Banks so we can properly implement a PCI Compliant credit card processing system.  It turns out that it's basically illegal to store credit card information on your own system, or it has HUGE legal ramifications if we do that.  Right now, we're just set up with PayPal Standard, which requires the customer just checkout on PayPal's website.  A good start to doing business, but not the end goal; we want them staying on our site. 
+
+So we need PayPal Website Payments Pro.  $30/mo, plus 2.2% and $0.3 per transaction.  To give you perspective, Basecamp (their business/company), is using Authorize.net, which is a more enterprisey (oldschool) solution, and it's $99/mo and 4% per transaction bare minimum, and it fluctuates.  So this is a good deal. 
+
+It's going to take some work to set this up, but it's worth it. 
+
+TODO: 
+
+- PayPal Website Payments Pro and PayPal Express for PCI compliant transactions 
+- Google Calendar integration 
+- Google Apps Premier ($50/year), for programmatically creating users and groups, plus a bunch more space and cool features.  Not sure if totally needed, but it's cheap! 
+- Google Contacts API.  Every user that creates an account with My Company will be automatically added to the My Company's Gmail Contact List.  This way they can have certain permissions through the google system.  And you can share documents to them much more easily.  People don't need Gmail accounts to view documents, just to edit them. 
+- Google Documents integration into the My Company Front end.  Currently, you can view and download documents dynamically from google docs via the admin panel.  Now I'd like to make it so certain users can just go to pretty urls in My Company (My Company.org/documents/breakthrough-training-requirements-doc), and if the user has permission to access that document, they will be able to see it in HTML, and download it as HTML/DOC/PDF. 
+
+In My Company, there will be a few main Groups of Documents: 
+
+- Public (or "Public My Company Documents"): Accessible by the search engines, downloadable at any time. 
+- Everything else: These will be specified by My Company itself.  Some possible ones are: 
+- Protected: Accessible from only within My Company (admin) 
+- Private: Accessible for only the user who created it 
+- Graduate: Accessible once a user fulfills a certain task or role, say once they've become a "Graduate". 
+- Then by category: 
+- "Breakthrough Trainings in Santa Rosa", etc. 
+Documents can be part of multiple groups. 
+
+In order to access documents, you have to be a part of a group.  By default, if you're not part of a group, and not registered, you can only see "public" documents.  Once you register (email and password, that's it), you can see more, such as registration docs.  If you are a sponsor, and they need specific docs, create a group for them, and make the sponsor part of that group. 
+
+- Documents are automatically re-published via googledocs every time there is a change made!  In order for this to be effective, it needs to be automated: Every time you add a new document, you don't want to have to manually drill down to select "auto-publish".  First round: admin panel button to make sure all docs have this selected.  Second round, run this task every night automatically. 
+
+There can  optionally be a folder where documents that belong together (say 10 documents about X), and in that folder is also something titled "README".  That will be rendered on the My Company website as a description on what to do with the documents in the folder.  (Just like github: see how this project organizes files and has a README). 
+Date: 3/19/10 
+Here is a list of things collected on March 11th, that I am updating this morning.  I have created a summarized priority list too. 
+
+Highest Priorities 
+- Registration form for Events with Paypal and Required Form (Works but there are edge cases people may run into) 
+- Alternate Payment methods (Check, possibly Credit Card directly, though that's a large task for small payoff) 
+- Fix security certificate (not a problem, just shows an ugly screen to the user) 
+- Google Groups and Document Sharing 
+- Integrate Events into Google Calendar 
+- Integrate Old Data 
+
+- google email 
+- Firefox and IE, security page.  Security certificate needs to be updated 
+- date on event table. fixed 
+- automate filling out event fields. almost complete, needs to clone registration tickets 
+- internet explorer popups don't work. should work if javascript is enabled. need to add message explaining the IE 6 (from 1999) horrors. 
+- how do coupons work security-wise 
+- email system isn't working: few days to transfer email system from GoDaddy to Gmail. on the list. 
+- surveys/forms sent out automatically: requires a task management panel (advanced Basecamp like functionality, simpler interface). on the list. 
+- handle checks and money order in payment system: currently only supports PayPal, and same old manual system. 
+- time zone on registration. Time zones are supported, estimated time for this specific feature: 1 day. 
+- documents specific to location. sorting features, estimated 2 days. 
+- send confirmation documents to everybody through email. 1 day.  We're just about there.  It can send out emails when they have signed up for an event, we just need a better way to manage from the My Company admin side. 
+
+- make HTML acceptable in event description - rich text support for event description (plain text now) 
+- pagination and search.  Implemented in some parts, still considering best approaches to this in others. 
+
+- event/ticket/product_group (refactor so it works better). complete. 
+- who registered you?. make a property on the event object. 
+- javascript controller - for integration of HTML with Flex. built, 1 day to integrate. 
+- swf_address module- same as javascript, just need to integrate. 
+- Email survey results - Complete. Survey results are now stored in Google Spreadsheets. 
+- friendly_id - better urls (/events/my-training-in-dc, vs. /events/123213).  Low priority. 
+- Documents (by type: brochure, form, survey, questionnaire): Built simple READ interface to google docs, now we just need to more finely wire them and tune them.  Evolving requirement. 
+- Google Apps Premier is $50/year - TOTALLY WORTH IT!  Using it now.  Will begin integrating into Google Groups for managing document permissions. 
+- Donations - Built paypal functionality for it, now need to integrate into the UI. 
+- Subscriptions - Same, built for paypal, now need to integrate into UI.  Also need to manage email announcements and reminders. 
+- money orders - need to build a better system for handling manual payments.  Works now by having admin manually check off that order was complete. 
+- Old Data - high priority. 
+- event registration state machine.  This is THE core technology required to automate sending forms/docs/surveys out, making sure people have paid their bills, etc.  Evolving requirement. 
+- Survey Edits - Surveys and Forms are now created with Google Forms which just came out a few months ago.  Very cool.  It's integrated into the system now. 
+- people page (by role) - Not dynamic, but working on front end. 
+- Implement Clone on Event - Done. 
+- Permission filtering - Switching to Google Groups Premier, but still defining requirements for integrating it into the Admin system. 
+- Forms on Google Docs - Done.  Need to load the next ones. 
+- ACL (access control list) for each doc - Part of Google Docs (lots of these things were solved with Google Docs! Save time, great product) 
+
+- Thank you for signing up Event - Right now, when you register, it shows a "Your order was successfully processed" screen.  We need to customize this.  Estimated time - 2 days. 
+- Formal State Machine for Tasks - Task Tracking - Core technology 
+- Activity feed (what groups have changed) - List of all activity from Google Docs and Facebook streaming into admin panel. 
+
+- model sponsor workflow - Automate the transfer/acceptance of documents in this workflow.  Very complex flow, can be greatly streamlined, requires Workflow Engine (or Task Manager). 
+- better survey validations - Write custom scripts to validate survey results on Google Docs (so user can't write "hello!" for the phone number. 
+
+- Google Calendar Integration - Events right now are independent of Google Calendar.  The Event model became very rich and complex, so it will take some thought and collaboration to delineate exactly what we want here. 
+- facebook group integration - New event creates new Facebook Group automatically.  We have created an My Company Facebook Application, but it doesn't do anything yet. 
+- Eventful integration - Testing and it works.  Once Events can process HTML (rich text), we will post them here. 
+- More elaborate gifts and donations - Custom pages for Donations (see Make-a-wish or Red Cross). 
+
+Larger, programmatic things that apply to the whole system: 
+
+- searching and sorting everything: solid 3 days. 
+- pagination - 3 days. 
+- re-skin html - Partly done with the front end skin, need to finish front and admin skin - 2 weeks. 
+- html fonts - There is a ton here.  Fonts are required for the Flex site (can have the most rich fonts), the Mobile/HTML site (less rich), and PDF/DOC (even less).  So we have a "Font Chain", and a How-to on when to use them. 
+- Javascript abstractions and animations.  To increase page load time, and decrease code maintaince cost/time, refactor Javascript so it is all in 1 file. 
+
+- mulitple login: facebook 1-click login (functionally implemented, need interface and to integrate into login form).  Also for OpenID and TwitterAuth 
+- gravatar: Gravatar url and "what is this?" description.  Gravatars are globally recognized self portraits, your global icon.  Used when you login and for your profile. 
+- profile: Once Registration, Payments, Docs, and Calendars are working well, which they almost are, build the profile 
+- badges: Once Profile is up, we will define a system of recognizing people for what they've done. 
+- tree of life (who registered you?) - Longer term, Evolving Requirement (the visuals at least, we can keep track of who registered you easily, see above) 
+- google checkout integration - Alternative to PayPal, lower priority. 
+
+possible models or objects to include in the My Company Framework: 
+
+- Referral (user - user relation) 
+- Testimonial vs. Comment 
+- Asset (asset_assignment) (videos, images, songs... to be played on the site) 
+- Settings and Configuration - More flexible architecture for modifying those random values, like the Form headers and Page titles. 
+
+Things to learn: 
+
+- storing redirects and session in the database (browser_cms) 
+- storing slugs/permalinks in the database (friendly_id) 
+- hirb 
+
+Things we know: 
+
+- tons, now it's just integrating them. 
+Rolling list of things we will need from My Company 
+If any of the data is not directly reachable, we can scrape the old website for it. 
+
+1. All Documents into the file structure you find appropriate. This includes Documents, Surveys, Forms, Catalogues, Letters, Awards, and Business (policy, etc.) docs. 
+2. Text file of all the Groups, printed straight from the database (see the My Company_Contacts.txt file) 
+3. Text file of all Contacts’ information, including address, ContactType, groups they’ve been in, etc. 
+4. Text file of all the deposits straight from the database 
+
+Bo knows how to extract this information from the database, but if for some reason it is not accessible, we can scrape it off of the website.

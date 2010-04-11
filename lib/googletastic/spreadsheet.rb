@@ -18,11 +18,14 @@ class Googletastic::Spreadsheet < Googletastic::Base
         id          = record.xpath("atom:id", ns_tag("atom")).first.text.gsub("http://spreadsheets.google.com/feeds/spreadsheets/", "")
         title       = record.xpath("atom:title", ns_tag("atom")).first.text
         content     = record.xpath("atom:content", ns_tag("atom")).first.text
+        created_at  = record.xpath("atom:published", ns_tag("atom")).text
+        updated_at  = record.xpath("atom:updated", ns_tag("atom")).text
         
         Googletastic::Spreadsheet.new(
           :id => id,
           :title => title,
-          :content => content
+          :content => content,
+          :updated_at => DateTime.parse(updated_at)
         )
       end
       records

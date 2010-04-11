@@ -31,6 +31,8 @@ Google's APIs have "3 types of authentication":http://code.google.com/apis/accou
 
 You can permanently unlock the CAPTCHA for a computer by going "here":https://www.google.com/a/accd.org/UnlockCaptcha.
 
+"Working with Authsub":http://code.google.com/apis/accounts/docs/AuthSub.html#WorkingAuthSub
+
 If this is for Google Apps, you must go to Google Docs Settings in the Admin Panel, and make sure this is selected: "Users can share documents outside this domain, but will receive a warning each time".  The most restrictive, "Users cannot share documents outside this domain", won't allow you to view documents at all.  Also, don't select "Require mydomain.com sign-in to view this form." for google forms.
 
 h2. Top 10 Things I Need the Google Data API to Have

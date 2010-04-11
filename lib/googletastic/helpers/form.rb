@@ -42,6 +42,7 @@ module Googletastic::Helpers::FormModelHelper
     # eval
     base.class_eval <<-end_eval, __FILE__, __LINE__
       attr_accessor :#{as}
+      attr_accessor :content
       
       def self.find_with_#{as}(*args)
         google_records = Googletastic::Form.all
@@ -52,7 +53,8 @@ module Googletastic::Helpers::FormModelHelper
           if !record_keys.include?(google_record.id)
             record = self.new(
               :#{foreign_key} => google_record.id,
-              :title => google_record.title
+              :title => google_record.title,
+              :updated_at => google_record.updated_at
             )
             record.save
             records << record

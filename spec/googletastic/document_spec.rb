@@ -112,8 +112,6 @@ describe Googletastic::Document do
       # AkQFRnw7fCp7ImA9WxBaGEw.
       client.headers["If-Modified-Since"] = since
       url = Googletastic::Document.index_url + "?updated-max=#{good}"
-      puts "URL: #{url}"
-      puts client.get(url).to_xml.to_xml
     end
   end
   
@@ -133,6 +131,9 @@ describe Googletastic::Document do
     it "should download a document as plain text" do
       doc = Googletastic::Document.find(@id)
       result = doc.download("txt")
+      liquid = Liquid::Template.parse(result.body)
+      result = liquid.render("company_name" => "My Company")
+      File.write(File.join(FIXTURES_DIR, "results/test.txt"), result)
       result.should_not == nil
     end
     
@@ -146,6 +147,17 @@ describe Googletastic::Document do
   end
   
   describe "active record wrapper" do
+    it "should have the dynamic method 'find_with_google_doc'" do
+      Document.respond_to?(:find_with_google_doc).should == true
+    end
     
+    it "should find and save all new documents" do
+      # Document.find_with_google_doc.should_not == nil
+    end
+    
+    it "should be able to compare previous updated time with current updated time" do
+      doc = Googletastic::Document.first
+      puts doc.inspect
+    end
   end
 end

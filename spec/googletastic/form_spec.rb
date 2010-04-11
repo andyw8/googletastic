@@ -6,6 +6,12 @@ describe Googletastic::Form do
     @form = Form.new
   end
   
+  describe "find" do
+    it "should list all spreadsheets as forms" do
+      
+    end
+  end
+  
   describe "dynamic helper methods" do
     it "should add dynamic methods to form model based on googletastic :form options" do
       @form.respond_to?(:google_form).should == true
