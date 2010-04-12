@@ -1,21 +1,25 @@
-module Googletastic::Api::Sync
+module Googletastic::Sync::Document
 
   class << self
-  
-    def push(username, password, options = {})
-      Googletastic.client_for(:app_engine).push(username, password, options)
-    end
     
-    def process_documents(documents, options = {})
+    def process(documents, options = {})
       # defaults to a reasonable limit (3MB) for heroku
       options[:max_size] ||= 3000000
       # per max_size chunk
       documents_processed = []
       # total
       updated_documents = []
+      counted_size = 0
       documents.each_with_index do |document, index|
         next if document.remote.kind != "document"
-        next if document.synced_at and document.synced_at <= document.remote.updated_at
+        if document.synced_at and document.synced_at >= document.remote.updated_at
+          puts "Skipping Document... #{document.title}"
+          if documents_processed.length > 0 and index == documents.length - 1
+            push(options[:username], options[:password], options)
+            cleanup(documents_processed, options)
+          end
+          next
+        end
         remote  = document.remote
         content = nil
         title   = remote.title
@@ -45,54 +49,29 @@ module Googletastic::Api::Sync
           tempfile = Tempfile.new("googltastic-tempfiles-#{title}-#{Time.now}-#{rand(10000)}")
           tempfile.write(content)
 
-          path = File.join(options[:folder], title)
-
+          path = File.join(options[:folder], "documents", title)
+          
           # if we have passed the 5MB (or our 3MB) limit,
           # then push the files to GAE
           if tempfile.size + counted_size >= options[:max_size] || index == documents.length - 1
             push(options[:username], options[:password], options)
-            cleanup(documents_processed)
+            cleanup(documents_processed, options)
             counted_size = 0
             documents_processed = []
           end
-        
           File.open(path, 'w') {|f| f.write(content) }
           documents_processed << document
           counted_size += tempfile.size
           tempfile.close
-
+          
           updated_documents << document
 
         rescue Exception => e
-          puts "ERROR: #{e.inspect}"
+          puts "Error... #{e.inspect}"
         end
       end
     
       updated_documents
-    end
-
-    # POSTs to your registered application
-    def post(options = {})
-      url = URI.parse(options[:url])
-      # POST update to registered application
-      http = Net::HTTP.new(url.host, url.port)
-      header = options[:header] || {}
-      header.merge!('Content-Type' =>'application/json')
-      data = options[:data].to_json
-      response = http.post(options[:path], data, header)
-    end
-  
-    def cleanup(documents)
-      documents.each do |document|
-        document.synced_at = Time.now
-        document.save!
-        path = File.join(options[:folder], document.title)
-        begin
-          File.delete(path)
-        rescue Exception => e
-        
-        end
-      end
     end
     
   end
