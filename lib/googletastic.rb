@@ -26,7 +26,7 @@ class Module
 end
 
 def require_local(path, from = __FILE__)
-  files(path, from) {|file| require file}
+  files(path, from) {|file| require file if File.extname(file) == ".rb"}
 end
 
 def files(path, from = __FILE__, &block)

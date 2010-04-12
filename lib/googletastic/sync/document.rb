@@ -81,6 +81,9 @@ module Googletastic::Sync::Document
             counted_size = 0
             documents_processed = []
           end
+          
+          content = Googletastic::PrettyPrint.xml(content)
+          
           File.open(path, 'w') {|f| f.write(content) }
           documents_processed << document
           counted_size += tempfile.size

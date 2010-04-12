@@ -66,6 +66,9 @@ module Googletastic::Sync::Form
             counted_size = 0
             forms_processed = []
           end
+          
+          content = Googletastic::PrettyPrint.xml(content)
+          
           File.open(path, 'w') {|f| f.write(content) }
           forms_processed << form
           counted_size += tempfile.size
