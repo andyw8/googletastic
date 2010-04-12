@@ -20,7 +20,7 @@ class Googletastic::Spreadsheet < Googletastic::Base
         content     = record.xpath("atom:content", ns_tag("atom")).first.text
         created_at  = record.xpath("atom:published", ns_tag("atom")).text
         updated_at  = record.xpath("atom:updated", ns_tag("atom")).text
-        
+
         Googletastic::Spreadsheet.new(
           :id => id,
           :title => title,

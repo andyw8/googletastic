@@ -30,9 +30,6 @@ module Googletastic::Helpers::FormModelHelper
         end
     end
     
-    Googletastic::Form.redirect_to = options[:redirect_to] if options.has_key?(:redirect_to)
-    Googletastic::Form.form_only = options[:form_only]
-    
     # fast access
     as          = options[:as]
     foreign_key = options[:foreign_key]
@@ -53,23 +50,19 @@ module Googletastic::Helpers::FormModelHelper
           if !record_keys.include?(google_record.id)
             record = self.new(
               :#{foreign_key} => google_record.id,
-              :title => google_record.title,
-              :updated_at => google_record.updated_at
+              :updated_at => google_record.updated_at,
+              :#{as} => google_record,
+              :title => google_record.title
             )
             record.save
             records << record
           end
         end
+        
+        records.each do |record|
+          record.#{as} = google_records.select { |r| r.id == record.#{foreign_key} }.first
+        end
         records
-      end
-      
-      def #{as}
-        @#{as} ||= Googletastic::Form.new(
-          :id => self.#{foreign_key},
-          :title => self.title,
-          :form_key => self.#{form_key}
-        )
-        @#{as}
       end
       
       # get form content
@@ -79,28 +72,28 @@ module Googletastic::Helpers::FormModelHelper
       end
       
       if base.is_a?(ActiveRecord::Base)
+        
+        before_validation       :clean_form_key
+        validates_presence_of   :#{as}
+        validates_uniqueness_of :#{as}
+        validate                :validate_formkey_is_valid
+        before_save             :sync_with_google
 
-          before_validation       :clean_form_key
-          validates_presence_of   :#{as}
-          validates_uniqueness_of :#{as}
-          validate                :validate_formkey_is_valid
-          before_save             :sync_with_google
+        def sync_with_google
+          Hash(#{sync}).each do |mine, theirs|
+            self[mine] = self.#{as}[theirs]
+          end if Googletastic[self].has_key?(:sync)
+        end
 
-          def sync_with_google
-            Hash(#{sync}).each do |mine, theirs|
-              self[mine] = self.#{as}[theirs]
-            end if Googletastic[self].has_key?(:sync)
+        def validate_form_key_is_valid
+          case self.#{as}.get
+          when Net::HTTPSuccess
+            true
+          else
+            errors.add(:form_key, "is not a valid Google Forms key or URL or error connecting to Google")
+            false
           end
-
-          def validate_form_key_is_valid
-            case self.#{as}.get
-            when Net::HTTPSuccess
-              true
-            else
-              errors.add(:form_key, "is not a valid Google Forms key or URL or error connecting to Google")
-              false
-            end
-          end
+        end
 
       end
     end_eval

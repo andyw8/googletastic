@@ -37,6 +37,25 @@ def require_spec
   require File.join(GOOGLETASTIC_ROOT, "/spec/spec_helper")
 end
 
+class String
+  # active_support isn't letting me do this!
+  def parameterize(sep = '-')
+    # replace accented chars with ther ascii equivalents
+    # parameterized_string = transliterate(string)
+    parameterized_string = self.dup
+    # Turn unwanted chars into the seperator
+    parameterized_string.gsub!(/[^a-z0-9\-_\+]+/i, sep)
+    unless sep.blank?
+      re_sep = Regexp.escape(sep)
+      # No more than one of the separator in a row.
+      parameterized_string.gsub!(/#{re_sep}{2,}/, sep)
+      # Remove leading/trailing separator.
+      parameterized_string.gsub!(/^#{re_sep}|#{re_sep}$/i, '')
+    end
+    parameterized_string.downcase
+  end
+end
+
 module Googletastic
   # :stopdoc:
   VERSION = '0.0.1'
