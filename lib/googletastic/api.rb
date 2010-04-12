@@ -7,7 +7,7 @@ module Googletastic::Api
       options[:key] ||= "documents"
       key = options[:key].to_s
       data = {key => []}
-      updated_documents.each do |document|
+      documents.each do |document|
         data[key] << document.remote.id
         yield(data, key, document) if block_given?
       end
@@ -23,4 +23,4 @@ module Googletastic::Api
   
 end
 
-require_local "mixins/*", __FILE__
+require_local "api/*", __FILE__

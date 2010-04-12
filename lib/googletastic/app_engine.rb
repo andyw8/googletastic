@@ -5,7 +5,7 @@ module GData
     class AppEngine < Base
       
       def initialize(options = {})
-        options[:clientlogin_service] ||= 'ar'
+        options[:clientlogin_service] = 'ah'
         super(options)
       end
       
@@ -28,8 +28,15 @@ module GData
         Googletastic.credentials[:cookie] = cookie
         # save the cookie to a file since we're
         # not in the browser!
-        File.open("config/gdata.yml", 'w') do |file|
-          YAML.dump(Googletastic.credentials, file)
+        storage = Googletastic.keys.has_key?(:storage) ? Googletastic.keys[:storage] : :filesystem
+        
+        # heroku can't store anything on filesystem
+        if storage == :filesystem
+          File.open("config/gdata.yml", 'w') do |file|
+            file.write Googletastic.credentials.to_yaml
+          end
+        elsif storage == :environment
+          ENV["GOOGLETASTIC_GAE_COOKIE"] = cookie
         end
         cookie
       end
@@ -37,7 +44,7 @@ module GData
       def get_cookie(url)
         uri = URI.parse(url)
         url_for_cookie = "#{uri.scheme}://#{uri.host}/_ah/login?continue=#{url}&auth=#{auth_handler.token}"
-        response = c.get(url)
+        response = self.make_request(:get, url_for_cookie)
         cookie = response.headers["set-cookie"].split('; ',2)[0]
         cookie
       end
@@ -91,6 +98,6 @@ module GData
   end
 end
 
-module Googletasic::AppEngine
+module Googletastic::AppEngine
   
 end
