@@ -18,6 +18,16 @@ class Googletastic::Spreadsheet < Googletastic::Base
     @rows ||= Googletastic::Row.all(:key => self.id, :worksheet_id => worksheet.id)
   end
   
+  def form
+    @form ||= Googletastic::Form.find(self.id)
+  end
+  
+  def columns
+    return @columns if @columns
+    row = @rows ? @rows.first : Googletastic::Row.first(:key => self.id, :worksheet_id => worksheet.id)
+    @columns = row.data.keys
+  end
+  
   # Time.now.xmlschema
   class << self
     
@@ -35,7 +45,7 @@ class Googletastic::Spreadsheet < Googletastic::Base
 
     def unmarshall(xml)
       records = xml.xpath("//atom:entry", ns_tag("atom")).collect do |record|
-        id          = record.xpath("atom:id", ns_tag("atom")).first.text.gsub("http://spreadsheets.google.com/feeds/spreadsheets/", "")
+        id                = record.xpath("atom:id", ns_tag("atom")).first.text.gsub("http://spreadsheets.google.com/feeds/spreadsheets/", "")
         edit_id           = record.xpath("atom:link[@rel='alternate']", ns_tag("atom")).first
         edit_id           = edit_id["href"].gsub("http://spreadsheets.google.com/ccc?key=", "") if edit_id
         title             = record.xpath("atom:title", ns_tag("atom")).first.text

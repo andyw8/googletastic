@@ -3,7 +3,7 @@ class Googletastic::Form < Googletastic::Base
   
   FORM_KEY_EXPRESSION = /formkey["|']\s*:["|']\s*([^"|']+)"/ unless defined?(FORM_KEY_EXPRESSION)
   
-  attr_accessor :title, :body, :redirect_to, :form_key, :form_only, :authenticity_token
+  attr_accessor :title, :body, :redirect_to, :form_key, :form_only, :authenticity_token, :spreadsheet
   
   def body(options = {}, &block)
     @body ||= get(options, &block)
@@ -16,6 +16,61 @@ class Googletastic::Form < Googletastic::Base
   
   def show_url
     self.class.show_url(self.form_key)
+  end
+  
+  def form_key
+    @form_key ||= get_form_key
+  end
+  
+  def properties
+    body
+    @properties
+  end
+  
+  # this you want to call JUST BEFORE you render in the view
+  # body still gives you the nokogiri element
+  def render
+    if self.form_only
+      result = body.xpath("//form").first.unlink
+    else
+      body.xpath("//div[@class='ss-footer']").first.unlink
+      body.xpath("//script").each {|x| x.unlink }
+      result = body.xpath("//div[@class='ss-form-container']").first.unlink
+    end
+    result.to_html
+  end
+  
+  # {columen_name => value}
+  def set_defaults(hash)
+    hash.each do |column, value|
+      entry = properties[column]
+      next unless entry and !entry.empty?
+      nodes = body.xpath("//*[@name='#{entry}']")
+      if entry =~ /group/
+        nodes.each do |node|
+          if node["value"] == value
+            node["checked"] = "checked"
+            break
+          end
+        end
+      else
+        node = nodes.first
+        next unless node
+        case node.name.to_s
+        when "input"
+          node["value"] = value
+        when "textarea"
+          node.content = value
+        when "select"
+          node.xpath("option").each do |option|
+            if option["value"] == value
+              option["selected"] = "selected"
+              break
+            end
+          end
+        end
+      end
+    end
   end
   
   class << self
@@ -119,13 +174,19 @@ class Googletastic::Form < Googletastic::Base
       node.add_child Nokogiri::XML::Text.new("\n", html)
     end
     
-    if self.form_only
-      html.xpath("//form").first.unlink
-    else
-      html.xpath("//div[@class='ss-footer']").first.unlink
-      html.xpath("//script").each {|x| x.unlink }
-      html.xpath("//div[@class='ss-form-container']").first.unlink
+    @properties = {}
+    html.css("div.ss-item").each do |item|
+      entry     = item.xpath("div[@class='ss-form-entry']").first
+      label     = entry.xpath("label[@class='ss-q-title']").first
+      next unless label
+      single    = (item["class"].to_s =~ /ss-(grid|scale)/).nil?
+      type      = single ? "single" : "group"
+      column    = label.text.downcase.gsub(/[^a-z0-9\-]/, "")
+      input_name = label["for"].gsub("_", ".").squeeze("\.") + "." + type
+      @properties[column] = input_name
     end
+    
+    html
   end
   
   def add_redirect(doc, options, &block)

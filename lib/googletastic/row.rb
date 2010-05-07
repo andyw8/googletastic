@@ -51,11 +51,11 @@ class Googletastic::Row < Googletastic::Base
         content           = record.xpath("atom:content", ns_tag("atom")).first.text
         created_at        = record.xpath("atom:published", ns_tag("atom")).text
         updated_at        = record.xpath("atom:updated", ns_tag("atom")).text
-        data         = {}
+        data              = {}
         
-        record.xpath("//gsx:*", ns_tag('gsx')).each do |node|
+        record.xpath("gsx:*", ns_tag('gsx')).each do |node|
           next unless node.elem?
-          data[node.name.to_sym] = node.text
+          data[node.name] = node.text
         end
         
         Googletastic::Row.new(
@@ -79,7 +79,7 @@ class Googletastic::Row < Googletastic::Base
         if record.id
           attributes = {"etag" => record.etag}.merge(ns_xml("atom", "gsx"))
         else
-          ns_xml("atom", "gsx")
+          attributes = ns_xml("atom", "gsx")
         end
         xml.entry(attributes) {
           if record.id # PUT = update
