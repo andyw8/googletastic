@@ -63,9 +63,7 @@ module Googletastic::Mixins::Actions
     end
 
     def upload_url
-      puts "UPLOADURL"
       self.class.upload_url(self.id)
-      puts "POST"
     end
       
     def save
@@ -95,17 +93,20 @@ module Googletastic::Mixins::Actions
 
       def create
         if has_attachment?
-          self.class.client.post_file(self.class.index_url, self.attachment_path, mime_type, self.to_xml)
+          self.class.client.post_file(self.index_url, self.attachment_path, mime_type, self.to_xml)
         else
-          self.class.client.post(self.class.index_url, self.to_xml)
+          self.class.client.post(self.index_url, self.to_xml)
         end
       end
-
+      
       def update(attribute_names = @attributes.keys)
         if has_attachment?
-          self.class.client.put_file(self.class.index_url, self.attachment_path, mime_type, self.to_xml)
+          self.class.client.put_file(self.index_url, self.attachment_path, mime_type, self.to_xml)
         else
-          self.class.client.put(self.edit_url || self.class.index_url, self.to_xml)
+          original_headers = self.client.headers.dup
+          self.client.headers["If-Match"] = self.etag if self.respond_to?(:etag)
+          self.class.client.put(self.edit_url || self.index_url, self.to_xml)
+          self.client.headers = original_headers
         end
       end
   end

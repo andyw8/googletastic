@@ -47,7 +47,7 @@ class Googletastic::Document < Googletastic::Base
       end
     end
     body.xpath("//div[@id='google-view-footer']").each { |n| n.unlink }
-    @content = body.xpath("//div[@id='doc-contents']").first
+    @content = body.xpath("//div[@id='doc-contents']").first.to_html
   end
   
   def acl
@@ -98,11 +98,12 @@ class Googletastic::Document < Googletastic::Base
         :language => "sourceLanguage",
         :permanent_delete => "delete",
         :convert => "convert",
-        :format => "exportFormat"
+        :format => "exportFormat",
+        :kind => "category"
       }.merge(super)
     end
     
-    def valid_category?(value)
+    def valid_kind?(value)
       %w(document spreadsheet folder presentation pdf form).include?(value)
     end
     
@@ -173,7 +174,7 @@ class Googletastic::Document < Googletastic::Base
         title       = record.xpath("atom:title", ns_tag("atom")).text
         categories  = record.xpath("atom:category", ns_tag("atom")).collect do |category|
           value = category["label"].to_s
-          kind = value if !kind and valid_category?(value)
+          kind = value if !kind and valid_kind?(value)
           value
         end
         resource_id = record.xpath("gd:resourceId", ns_tag("gd")).text
@@ -214,6 +215,25 @@ class Googletastic::Document < Googletastic::Base
           }
         }
       }.to_xml
+    end
+    
+    def get_clean_content(remote)
+      title   = remote.title
+      ext     = remote.ext
+      if ext == ".textile"
+        # google is putting strange characters at beginning of downloaded files
+        content = remote.download("txt").body.gsub(/\357\273\277/, "")
+        content = RedCloth.new(content).to_html
+      elsif ext == ".markdown"
+        content = remote.download("txt").body.gsub(/\357\273\277/, "")
+        content = BlueCloth.new(content).to_html
+      elsif ext.nil? || ext.empty?
+        # just use the html we have already
+        content = remote.content
+      else
+        content = remote.download("txt").body.gsub(/\357\273\277/, "")
+      end
+      content
     end
   end
 end

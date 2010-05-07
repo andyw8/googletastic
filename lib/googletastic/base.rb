@@ -18,6 +18,8 @@ class Googletastic::Base < Hash
   # classes/records it is synced with
   attr_accessor :synced_with
   attr_accessor :response
+  attr_accessor :keep_raw
+  attr_accessor :raw
   
   def synced_with
     @synced_with ||= []

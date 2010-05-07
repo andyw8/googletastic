@@ -83,6 +83,9 @@ module GData
               output.write("#{password}\n")
             end
             while ((str = input.gets) != nil)
+              if str =~ /Checking if new version is ready to serve/
+                
+              end
               puts str
             end
           rescue Exception => e
@@ -98,6 +101,6 @@ module GData
   end
 end
 
-module Googletastic::AppEngine
+class Googletastic::AppEngine < Googletastic::Base
   
 end

@@ -9,6 +9,7 @@ require 'active_support'
 require 'active_record'
 require 'gdata'
 require 'liquid'
+require 'mechanize'
 
 GOOGLETASTIC_ROOT = "#{File.dirname(__FILE__)}/.." unless defined?(GOOGLETASTIC_ROOT)
 
@@ -58,7 +59,7 @@ end
 
 module Googletastic
   # :stopdoc:
-  VERSION = '0.0.1'
+  VERSION = '0.0.4'
   # :startdoc
   class << self; attr_accessor :keys, :clients, :options; end
 
@@ -69,7 +70,7 @@ module Googletastic
     raise "Sorry, you must have #{config_file}" unless File.exists?(config_file)
     self.keys = YAML.load_file(config_file).symbolize_keys
   end
-
+  
   def self.client_for(model)
     self.clients ||= {}
     model = model.to_sym

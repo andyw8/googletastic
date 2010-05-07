@@ -14,6 +14,7 @@ describe Googletastic::Document do
       doc = Googletastic::Document.first
       doc.should_not == nil
       doc.title.should_not be_empty
+      puts doc.inspect
     end
     
     it "should find all documents from google docs, and they should be an array" do

@@ -3,7 +3,6 @@ module Googletastic::Helpers
     base.extend(ClassMethods)
   end
   
-  
   module ClassMethods
     
     def googletastic(model, options = {})

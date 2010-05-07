@@ -21,7 +21,7 @@ module Googletastic::Mixins::Attributes
   
   def inspect
     hash = ""
-    attributes.each { |k,v| hash << " @#{k.to_s}=#{v.inspect}" }
+    attributes.each { |k,v| hash << " @#{k.to_s}=#{v.inspect}" unless k.to_s == "raw" }
     "#<#{self.class.to_s}#{hash}/>"
   end
 end

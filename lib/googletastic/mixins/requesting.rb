@@ -50,7 +50,7 @@ module Googletastic::Mixins::Requesting
       options.inject({}) do |converted, (key, value)|
         real_key = queries[key]
         if queries.has_key?(key)
-          next if self.respond_to?("valid_#{real_key}?") and !self["valid_#{real_key}?"]
+          next if self.respond_to?("valid_#{real_key}?") and !self.send("valid_#{real_key}?", value)
           value = self.send("convert_#{real_key}", value) if self.respond_to?("convert_#{real_key}")
           converted[real_key] = value
         end

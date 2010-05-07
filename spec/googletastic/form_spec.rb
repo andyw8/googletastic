@@ -8,7 +8,9 @@ describe Googletastic::Form do
   
   describe "find" do
     it "should list all spreadsheets as forms" do
-      
+      Googletastic::Form.all.each do |form|
+        form.should be_an_instance_of(Googletastic::Form)
+      end
     end
   end
   
@@ -23,21 +25,22 @@ describe Googletastic::Form do
     end
   end
   
-  describe "unmarshalling" do
-    it "should strip the html page down to a form (unmarshall)" do
-      @html = Nokogiri::HTML(IO.read(File.join(FIXTURES_DIR, "data/form.html")))
-      form = Googletastic::Form.unmarshall(@html)
-      form.redirect = "/forms/my-custom-id"
+  describe "mechanize" do
+    it "it should get the formkey via mechanize" do
+      form = Googletastic::Form.first
+      formkey = form.get_form_key
+      puts "FORMKEY: #{formkey}"
+      formkey.should_not be_nil
+    end
+    
+    it "should remove unnecessary html from form" do
+      form = Googletastic::Form.first
+      form.form_key = form.get_form_key
+      body = form.body
+      puts "BODY!: #{body.to_s}"
+      body.should_not == nil
     end
   end
   
-  describe "redirecting" do
-    it "should add generic redirect" do
-      Googletastic::Form.redirect_to = "/my-generic-redirect"
-      @html = Nokogiri::HTML(IO.read(File.join(FIXTURES_DIR, "data/form.html")))
-      form = Googletastic::Form.unmarshall(@html)
-      Nokogiri::HTML(form.body).xpath("//form").first["action"].should == "/my-generic-redirect"
-    end
-  end
   
 end

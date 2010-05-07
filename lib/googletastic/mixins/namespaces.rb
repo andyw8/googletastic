@@ -12,7 +12,9 @@ module Googletastic::Mixins::Namespaces
     "app" => "http://www.w3.org/2007/app",
     "gCal" => "http://schemas.google.com/gCal/2005",
     "gContact" => "http://schemas.google.com/contact/2008",
-    "batch" => "http://schemas.google.com/gdata/batch"
+    "batch" => "http://schemas.google.com/gdata/batch",
+    "gs" => "http://schemas.google.com/spreadsheets/2006",
+    "gsx" => "http://schemas.google.com/spreadsheets/2006/extended"
   } unless defined?(NAMESPACES)
     
   def self.included(base)

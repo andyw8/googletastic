@@ -38,6 +38,8 @@ If this is for Google Apps, you must go to Google Docs Settings in the Admin Pan
 h2. Top 10 Things I Need the Google Data API to Have
 
 "Submit Your Ideas to Google!!!":http://productideas.appspot.com/#15/e=220cb&t=2192a&f=22150
+http://productideas.appspot.com/#15/e=220cb&t=cabc1
+
 
 # Partial Responses for everything.
 	So we can get only the data we need.  This way we can poll our google docs for any changes and run processes on them.
